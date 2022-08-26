@@ -1,0 +1,97 @@
+.highcharts-grid-line, .highcharts-axis, .highcharts-axis-labels, .highcharts-credits, .highcharts-legend,
+.highcharts-point, .highcharts-halo, .highcharts-label, .highcharts-tooltip, .highcharts-title,
+.highcharts-plot-background, .highcharts-background {
+  display: none;
+}
+.App {
+  margin: 5px;
+  padding: 10px;
+}
+.spline-graph .highcharts-container {
+  margin-top: -8px;
+  width: 100px !important;
+  height: 62px !important;
+  /* width: 150px !important;
+  height: 100px !important; */
+}
+.spline-graph .highcharts-root {
+    width: 100px;
+    height: 70px;
+}
+
+.item-flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.item-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.card-graph-container {
+  /* border: 1px solid #ddd; */
+  margin-top: 15px;
+  /* border-radius: 5px; */
+  flex-wrap: wrap;
+  /* box-shadow: 0 1px 2px rgba(0,0,0,0.15); */
+}
+.card-layout {
+  width: 200px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 5px 5px 0 5px;
+  margin: 5px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+}
+.card-title, .graph-amount-label {
+  justify-content: space-between;
+  align-items: center;
+}
+.card-title .title {
+  font-size: 12px;
+    font-weight: 500;
+}
+.card-title .growth-amount {
+  font-size: 13px;
+  font-weight: 500;
+}
+.card-title .growth-down {
+  color: red;
+}
+.card-title .growth-up {
+  color: green;
+}
+.target-amount {
+  font-size: 11px;
+  font-weight: 600;
+}
+.target-amount .target-label {
+  font-weight: 400;
+}
+.amount-details {
+  align-items: flex-start;
+}
+.amount-details, .actual-amount {
+  font-weight: 700;
+}
+.arrow-up, .arrow-down {
+  font-size: 14px;
+}
+.time-button-menu .btnPadding {
+  padding: 5px 10px;
+  margin: 0;
+  font-weight: bold;
+  font-size: 12px;  
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+.time-button-menu .first-btn {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.time-button-menu .fourth-btn {
+  border-right: 1px solid #ddd;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
