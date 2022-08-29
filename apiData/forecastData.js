@@ -1,66 +1,79 @@
 export const foreCastInfo = [{
     week: "10/03/22",
     weekNumber: 40,
-    value: "$800.87"
+    target: "$800.87",
+    targetType: "Good"
 },
 {
     week: "10/10/22",
     weekNumber: 41,
-    value: "$801.87"
+    target: "$801.87",
+    targetType: "Good"
 },
 {
     week: "10/17/22",
     weekNumber: 42,
-    value: "$810.87"
+    target: "$810.87",
+    targetType: "Good"
 },
 {
     week: "10/24/22",
     weekNumber: 43,
-    value: "$520.87"
+    target: "$520.87",
+    targetType: "Average"
 },{
     week: "10/31/22",
     weekNumber: 44,
-    value: "$802.87"
+    target: "$802.87",
+    targetType: "Good"
 },
 {
     week: "11/07/22",
     weekNumber: 45,
-    value: "$500.87"
+    target: "$500.87",
+    targetType: "Average"
 },
 {
     week: "11/14/22",
     weekNumber: 46,
-    value: "$700.87"
+    target: "$700.87",
+    targetType: "Good"
 },
 {
     week: "11/21/22",
     weekNumber: 47,
-    value: "$500.87"
+    target: "$500.87",
+    targetType: "Average"
 },
 {
     week: "11/28/22",
     weekNumber: 48,
-    value: "$200.87"
+    target: "$200.87",
+    targetType: "Low"
 },
 {
     week: "12/05/22",
     weekNumber: 49,
-    value: "$507.87"
+    target: "$507.87",
+    targetType: "Average"
 },
 {
     week: "12/12/22",
     weekNumber: 50,
-    value: "$501.87"
+    target: "$501.87",
+    targetType: "Average"
 },
 {
     week: "12/19/22",
     weekNumber: 51,
-    value: "$202.87"
+    target: "$202.87",
+    targetType: "Low"
 },
 {
     week: "12/26/22",
     weekNumber: 52,
-    value: "$102.87"
+    target: "$102.87",
+    targetType: "Low"
 },
 
 ]
