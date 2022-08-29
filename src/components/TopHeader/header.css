@@ -1,0 +1,47 @@
+.search-box {
+  margin-left: auto;
+}
+
+#default-search {
+  border: 1.5px solid rgb(192, 197, 202);
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  width: 350px;
+}
+
+#default-search:focus {
+  border-color: rgb(100, 120, 128);
+  outline: none;
+}
+
+.header-icons {
+  display: flex;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+.header-icon {
+  font-size: 1rem;
+}
+
+.user {
+  margin-left: 1rem;
+  margin-right: 0.5rem;
+}
+
+.user img {
+  border-radius: 50%;
+  flex-shrink: 0;
+  height: 50px;
+  margin-left: 4px;
+  width: 50px;
+}
+
+.user-name {
+  font-weight: 700;
+}
+
+.user-designation {
+  font-size: 12px;
+  font-weight: 500;
+}
