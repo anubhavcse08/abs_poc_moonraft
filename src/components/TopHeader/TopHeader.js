@@ -1,4 +1,5 @@
 import "./header.css";
+import profile from "../../assets/dummy-profile.png";
 
 const TopHeader = (prop) => {
   document.onkeyup = function (e) {
@@ -53,7 +54,11 @@ const TopHeader = (prop) => {
           </a>
         </div>
         <div className="user flex items-center">
-          <img src="" alt="img"></img>
+          <img
+            className="border-2 border-white rounded-full mr-2"
+            src={profile}
+            alt="img"
+          ></img>
           <div className="user-details">
             <div className="user-name">{prop.header.name}</div>
             <div className="user-designation text-xs">
