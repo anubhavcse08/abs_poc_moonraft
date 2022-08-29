@@ -1,0 +1,15 @@
+.submit {
+  border-radius: 8px;
+  padding: 2px 4px;
+}
+
+select {
+  width: 80px;
+  text-align: right;
+}
+
+select:focus,
+select:active {
+  outline: none;
+  border: none;
+}
