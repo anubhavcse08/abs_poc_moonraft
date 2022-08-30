@@ -1,14 +1,27 @@
-import React from 'react'
+import { useState } from "react";
+import "./TimeButtonMenu.css";
 
-const TimeButtonMenu = () => {
+const tabs = ["This Quarter", "Next Quarter", "YTD", "1 Year"];
+
+const TimeButtonMenu = (props) => {
+  const [checked, setChecked] = useState(tabs[0]);
+  const getChecked = (e) => {
+    setChecked(e.target.innerText);
+  };
   return (
-    <div className='time-button-menu item-flex-row'>
-        <p className='first-btn btnPadding'>This Quarter</p>
-        <p className='second-btn btnPadding'>Next Quarter</p>
-        <p className='third-btn btnPadding'>YTD</p>
-        <p className='fourth-btn btnPadding'>1 Year</p>
+    <div className="tabs">
+      <ul className="flex items-center text-xs font-medium">
+        {tabs.map((tab, i) => (
+          <li
+            className={"tab " + (checked == tab ? "is-active" : "")}
+            onClick={getChecked}
+          >
+            {tab}
+          </li>
+        ))}
+      </ul>
     </div>
-  )
-}
+  );
+};
 
-export default TimeButtonMenu
+export default TimeButtonMenu;

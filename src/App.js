@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { DatePicker } from "antd";
 import "./App.css";
 import TableDesc from "./components/dashboard/TableDesc";
 import TopHeader from "./components/TopHeader/TopHeader";
@@ -14,6 +15,9 @@ class App extends Component {
     this.state = {
       name: "Anubhav",
     };
+  }
+  onChange(e) {
+    console.log(e);
   }
   render() {
     const options = {
@@ -57,7 +61,7 @@ class App extends Component {
             <div class="card-body py-3 px-4">
               <TimeButtonMenu />
 
-              <div className="card-graph-container item-flex-row">
+              <div className="card-graph-container item-flex-row gap-4">
                 <GraphCard options={options} isGrowth={true} />
                 <GraphCard options={options} isGrowth={false} />
                 <GraphCard options={options} isGrowth={true} />
@@ -70,7 +74,57 @@ class App extends Component {
 
         {/* <SplineChart  isGrowth={true} /> */}
         <section>
-          <TableDesc />
+          <div class="card text-sm">
+            <div class="card-header flex items-center p-4 border-b border-sky-600">
+              <DatePicker onChange={this.onChange} picker="quarter" />
+              <div className="relative">
+                <div class="flex absolute inset-y-0 right-4 items-center pl-3 pointer-events-none">
+                  <svg
+                    aria-hidden="true"
+                    class="w-5 h-5 text-gray-500 dark:text-gray-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                    ></path>
+                  </svg>
+                </div>
+                <input
+                  type="search"
+                  className="text-xs border-2 rounded-lg p-2"
+                  placeholder="Search"
+                  required
+                ></input>
+              </div>
+              <div class="filterby">
+                <label>filter by:</label>
+                <select class="font-medium">
+                  <option value="1" selected>
+                    Status
+                  </option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+              <div class="icons flex items-center gap-4 ml-4">
+                <span className="icon" href="#">
+                  <i class="bi bi-calendar4"></i>
+                </span>
+                <span className="icon" href="#">
+                  <i class="bi bi-fullscreen-exit"></i>
+                </span>
+              </div>
+            </div>
+            <div class="card-body py-3 px-4">
+              <TableDesc />
+            </div>
+          </div>
         </section>
       </div>
     );
