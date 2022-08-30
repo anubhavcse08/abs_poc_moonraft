@@ -119,10 +119,10 @@ export const weekWiseData = {
                 weeks: 9
             },
             {
-                startWeek: "11/21/22",
+                startWeek: "10/03/22",
                 Forecast: "$20.99",
                 status: "Draft",
-                weeks: 3
+                weeks: 9
             }]
         },
         {
@@ -152,7 +152,13 @@ export const weekWiseData = {
                 startWeek: "10/03/22",
                 Forecast: "$12.99",
                 status: "Approved",
-                weeks: 12
+                weeks: 13
+            },
+            {
+                startWeek: "10/03/22",
+                Forecast: "$12.99",
+                status: "Approved",
+                weeks: 2
             },
             {
                 startWeek: "10/24/22",
@@ -179,7 +185,7 @@ export const weekWiseData = {
                 startWeek: "10/03/22",
                 Forecast: "$12.99",
                 status: "Planning",
-                weeks: 12
+                weeks: 13
             },
             {
                 startWeek: "10/03/22",
@@ -209,7 +215,7 @@ export const weekWiseData = {
                 startWeek: "10/03/22",
                 Forecast: "$12.99",
                 status: "Approved",
-                weeks: 12
+                weeks: 13
             }]
         },
         {
@@ -236,7 +242,7 @@ export const weekWiseData = {
                 startWeek: "10/03/22",
                 Forecast: "$20.99",
                 status: "Approved",
-                weeks: 12
+                weeks: 13
             },
             {
                 startWeek: "10/03/22",
@@ -329,7 +335,7 @@ export const weekWiseData = {
                 startWeek: "10/03/22",
                 Forecast: "$12.99",
                 status: "Approved",
-                weeks: 12
+                weeks: 13
             },
             {
                 startWeek: "10/24/22",
@@ -356,7 +362,7 @@ export const weekWiseData = {
                 startWeek: "10/03/22",
                 Forecast: "$12.99",
                 status: "Planning",
-                weeks: 12
+                weeks: 13
             },
             {
                 startWeek: "10/03/22",
@@ -386,7 +392,7 @@ export const weekWiseData = {
                 startWeek: "10/03/22",
                 Forecast: "$12.99",
                 status: "Approved",
-                weeks: 12
+                weeks: 13
             }]
         },
         {
@@ -413,7 +419,7 @@ export const weekWiseData = {
                 startWeek: "10/03/22",
                 Forecast: "$20.99",
                 status: "Approved",
-                weeks: 12
+                weeks: 13
             },
             {
                 startWeek: "10/03/22",
