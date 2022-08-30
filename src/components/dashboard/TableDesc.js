@@ -1,85 +1,147 @@
-import React, { Component } from 'react';
-import { foreCastInfo, weekWiseData } from '../../apiData/forecastData';
-import DataCellLabel from './DataCellLabel';
+import React, { Component, Fragment } from "react";
+import { foreCastInfo, weekWiseData } from "../../apiData/forecastData";
+import DataCellLabel from "./DataCellLabel";
 
 class TableDesc extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            foreCastDetails: foreCastInfo,
-            weekWiseDetails: weekWiseData
-        }
+  constructor(props) {
+    super(props);
+    this.state = {
+      foreCastDetails: foreCastInfo,
+      weekWiseDetails: weekWiseData,
+    };
+  }
+  renderTableHeaderCell = (headerTitle) => {
+    return (
+      <tr>
+        <th className="py-2 border border-slate-300 bg-white font-semibold w-96 px-2 text-left">
+          {headerTitle}
+        </th>
+        {this.state.foreCastDetails.map((item, index) => {
+          return (
+            <th
+              key={index}
+              className="py-2 border border-slate-300 bg-white font-semibold text-center w-24"
+            >
+              {headerTitle === "Weeks" ? (
+                <Fragment>
+                  <p className="whitespace-no-wrap text-gray-500 text-xs text-custom-small">
+                    {item.week}
+                  </p>
+                  <p className="whitespace-no-wrap text-gray-600 text-xs">
+                    {item.weekNumber}
+                  </p>
+                </Fragment>
+              ) : (
+                <Fragment>
+                  <p className="whitespace-no-wrap text-gray-600 text-xs">
+                    {item.target}
+                  </p>
+                  <p className="bg-sky-600 py-3 w-full"></p>
+                </Fragment>
+              )}
+            </th>
+          );
+        })}
+      </tr>
+    );
+  };
+  renderTableHeader = () => {
+    return (
+      <Fragment>
+        {this.renderTableHeaderCell("Weeks")}
+        {this.renderTableHeaderCell("Forecast")}
+      </Fragment>
+    );
+  };
+  getColspanCell = (forecastInfo, dataCell) => {
+    let week = 0,
+      isStatusBar = false;
+    for (let i = 0; i < forecastInfo.length; i++) {
+      const element = forecastInfo[i];
+      if (dataCell.week === element.startWeek) {
+        week = element.weeks;
+        isStatusBar = true;
+        break;
+      }
     }
-    renderTableHeaderCell = (headerTitle) => {
-        return <tr>
-            <th className='py-2 border border-slate-300 bg-white font-semibold w-96 px-2 text-left'>{headerTitle}</th>
-            {this.state.foreCastDetails.map((item, index) => {
-                return <th key={index} className='py-2 border border-slate-300 bg-white font-semibold text-center w-24'>
-                    {headerTitle === 'Weeks' ?
-                        <><p className="whitespace-no-wrap text-gray-500 text-xs text-custom-small">{item.week}</p>
-                            <p className='whitespace-no-wrap text-gray-600 text-xs'>{item.weekNumber}</p></> : <>
-                            <p className='whitespace-no-wrap text-gray-600 text-xs'>{item.target}</p>
-                            <p className="bg-sky-600 py-3 w-full"></p>
-                        </>}
-                </th>
-            })}
-        </tr>
-    }
-    renderTableHeader = () => {
-        return (
-            <>
-                {this.renderTableHeaderCell('Weeks')}
-                {this.renderTableHeaderCell('Forecast')}
-            </>
-        )
-    }
-    getColspanCell = (forecastInfo, dataCell) => {
-        let week = 0, isStatusBar = false;
-        for (let i = 0; i < forecastInfo.length; i++) {
-            const element = forecastInfo[i];
-            if (dataCell.week === element.startWeek) {
-                week = element.weeks;
-                isStatusBar = true;
-                break;
+    return { week, isStatusBar };
+  };
+  renderCellStatusLabel = (isStatusBar, week, item, dataCell, i, count) => {
+    return (
+      <Fragment>
+        {isStatusBar && (
+          <td
+            className={
+              "absolute border-slate-300 bg-white w-24 overflow-hidden"
             }
-        }
-        return { week, isStatusBar };
-    }
-    renderCellStatusLabel = (isStatusBar, week, item, dataCell, i, count) => {
-        return <>
-            {isStatusBar && <td colSpan={week} className='py-2 border border-slate-300 bg-white w-24 overflow-hidden' key={i}>
-                {item.forecastInfo.map((data, indexValue) => {
-                    if (dataCell.week === data.startWeek) {
-                        console.log(dataCell.week, '===', data.startWeek, ' ------ ', data);
-                        return <DataCellLabel option={data} />
+            style={{ width: 76.7 * week + "px", zIndex: 14 - i }}
+            key={i}
+          >
+            {item.forecastInfo.map((data, indexValue) => {
+              if (dataCell.week === data.startWeek) {
+                {
+                  /* item.Title == "KGM K-Cups"  */
+                }
+                console.log(item.Title, i, indexValue);
+                return (
+                  <DataCellLabel
+                    option={data}
+                    marginTop={
+                      46 * indexValue + (indexValue > 1
+                        ? 46 * (indexValue - 1)
+                        : "" )+ "px"
                     }
-                })}
-            </td>}
-            {!isStatusBar && count <= i && <td className='py-2 border border-slate-300 bg-white w-24 overflow-hidden' key={i}></td>}
-            </>
-    }
-    renderElement = (item) => {
-        let count = 0;
-        // for (let i = 0; i < this.state.foreCastDetails.length; i++) {
-        //     const element = this.state.foreCastDetails[i];
-        return this.state.foreCastDetails.map((element, i) => {
-            const { week, isStatusBar } = this.getColspanCell(item.forecastInfo, element);
-            count = isStatusBar ? i + week : count;
+                  />
+                );
+              }
+            })}
+          </td>
+        )}
+        {!isStatusBar && (
+          <td
+            className="py-2 border border-slate-300 bg-white w-24 overflow-hidden"
+            key={i}
+          ></td>
+        )}
+      </Fragment>
+    );
+  };
+  renderElement = (item) => {
+    let count = 0;
+    // for (let i = 0; i < this.state.foreCastDetails.length; i++) {
+    //     const element = this.state.foreCastDetails[i];
+    return this.state.foreCastDetails.map((element, i) => {
+      const { week, isStatusBar } = this.getColspanCell(
+        item.forecastInfo,
+        element
+      );
+      count = isStatusBar ? i + week : count;
 
-            // console.log(count, ' --- ', i, ' --- ', week, ' --- ', isStatusBar);
+      // console.log(count, ' --- ', i, ' --- ', week, ' --- ', isStatusBar);
 
-            return this.renderCellStatusLabel(isStatusBar, week, item, element, i, count);
-        });
-    }
+      return this.renderCellStatusLabel(
+        isStatusBar,
+        week,
+        item,
+        element,
+        i,
+        count
+      );
+    });
+  };
 
-    renderTableData = () => {
-        return this.state.weekWiseDetails.data.map((item, index) => {
-            return <tr key={index}>
-                <td className='py-2 border border-slate-300 bg-white font-semibold w-96 px-2'>
-                    <p className='whitespace-no-wrap text-gray-900 text-sm'>{item.Title}</p>
-                </td>
-                {this.renderElement(item)}
+  renderTableData = () => {
+    return this.state.weekWiseDetails.data.map((item, index) => {
+      return (
+        <tr key={index}>
+          <td className="py-2 border border-slate-300 bg-white font-semibold w-96 px-2">
+            <p className="whitespace-no-wrap text-gray-900 text-sm">
+              {item.Title}
+            </p>
+          </td>
+          {this.renderElement(item)}
         </tr>
+      );
     });
     // return this.state.Forecast.map((item, index) => {
     //     return (
@@ -89,27 +151,24 @@ class TableDesc extends Component {
     //         </td>
     //     );
     // });
-}
-render() {
+  };
+  render() {
     return (
-        <React.Fragment>
-            <div className="container mx-auto px-4">
-                <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
-                    <div className="inline-block min-w-full shadow-md overflow-hidden">
-                        <table className="min-w-full leading-normal border-collapse border border-slate-400">
-                            <thead>
-                                {this.renderTableHeader()}
-                            </thead>
-                            <tbody>
-                                {this.renderTableData()}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+      <Fragment>
+        <div className="container mx-auto px-4">
+          <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+            <div className="inline-block min-w-full shadow-md overflow-hidden">
+              <table className="min-w-full leading-normal border-collapse border border-slate-400">
+                <thead>{this.renderTableHeader()}</thead>
+                <tbody>{this.renderTableData()}</tbody>
+                {/* {this.props.children} */}
+              </table>
             </div>
-        </React.Fragment>
-    )
-}
+          </div>
+        </div>
+      </Fragment>
+    );
+  }
 }
 
 export default TableDesc;
