@@ -1,5 +1,11 @@
 @import "~antd/dist/antd.css";
 
+:root {
+  --secondary-color: rgb(2 132 199); /*sky-600*/
+  --border: rgb(203, 213, 225); /* slate-300*/
+  --border-active: var(--secondary-color);
+}
+
 .highcharts-grid-line,
 .highcharts-axis,
 .highcharts-axis-labels,
@@ -132,4 +138,8 @@ section {
 
 .filterby {
   margin-left: auto;
+}
+
+.search-box-2 {
+  width: clamp(6rem, 20%, 12rem);
 }

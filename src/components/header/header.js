@@ -12,7 +12,7 @@ const Header = () => {
       </div>
       <button
         type="button"
-        class="text-white bg-sky-700 hover:bg-sky-800 rounded-lg text-sm px-3 py-2 focus:outline-none"
+        class="text-white bg-sky-600 hover:bg-sky-800 rounded-lg text-sm px-3 py-2 focus:outline-none"
       >
         Add Event
       </button>

@@ -1,7 +1,4 @@
-:root {
-  --border: rgb(139, 202, 234);
-  --border-active: rgb(60, 192, 194);
-}
+
 
 .tabs li {
   border-bottom: 1px solid var(--border);

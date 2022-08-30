@@ -16,9 +16,6 @@ class App extends Component {
       name: "Anubhav",
     };
   }
-  onChange(e) {
-    console.log(e);
-  }
   render() {
     const options = {
       title: "FORECAST",
@@ -52,11 +49,11 @@ class App extends Component {
         <Form></Form>
         <section>
           <div class="card">
-            <div class="card-header flex items-center p-4 border-b border-sky-600">
+            <div class="card-header flex items-center p-4 border-b border-slate-300">
               <div className="text-sm font-semibold">
                 <i class="bi bi-chevron-contract mr-2"></i>Metrics
               </div>
-              <button class="button-more text-sky-500 text-sm">More</button>
+              <button class="button-more text-sky-600 text-sm">More</button>
             </div>
             <div class="card-body py-3 px-4">
               <TimeButtonMenu />
@@ -74,37 +71,34 @@ class App extends Component {
 
         {/* <SplineChart  isGrowth={true} /> */}
         <section>
-          <div class="card text-sm">
-            <div class="card-header flex items-center p-4 border-b border-sky-600">
-              <DatePicker onChange={this.onChange} picker="quarter" />
-              <div className="relative">
-                <div class="flex absolute inset-y-0 right-4 items-center pl-3 pointer-events-none">
-                  <svg
-                    aria-hidden="true"
-                    class="w-5 h-5 text-gray-500 dark:text-gray-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                    ></path>
-                  </svg>
+          <div class="card">
+            <div class="card-header flex items-center p-4 border-b border-slate-300 text-xs">
+              <div className="relative border rounded py-2 px-4">
+                <i class="bi bi-calendar4 pr-2"></i>Q4,2022
+              </div>
+              <div className="border w-px mx-4 py-4"></div>
+              <div className="search-box-2 relative">
+                <div class="flex absolute inset-y-0 right-4 items-center pl-3 pointer-events-none text-slate-400">
+                  <i class="bi bi-search"></i>
                 </div>
                 <input
                   type="search"
-                  className="text-xs border-2 rounded-lg p-2"
+                  className="border rounded p-2 border-stone-300 focus:border-stone-400 w-full"
                   placeholder="Search"
                   required
                 ></input>
               </div>
-              <div class="filterby">
-                <label>filter by:</label>
-                <select class="font-medium">
+              <div className="border w-px mx-4 py-4"></div>
+              <div>
+                Forecast: <span className="font-medium">$8,081.00</span>
+              </div>
+              <div className="text-red-500 ml-2 font-semibold">
+                <i class="bi bi-arrow-down"></i>
+                <span id="growth-perc">3.1</span>%
+              </div>
+              <div class="filterby mt-1">
+                <label>Filter by:</label>
+                <select class="font-medium ml-1 pr-1">
                   <option value="1" selected>
                     Status
                   </option>
@@ -112,11 +106,11 @@ class App extends Component {
                   <option value="3">Three</option>
                 </select>
               </div>
-              <div class="icons flex items-center gap-4 ml-4">
-                <span className="icon" href="#">
+              <div class="icons flex items-center gap-4 ml-4 text-base">
+                <span className="icon">
                   <i class="bi bi-calendar4"></i>
                 </span>
-                <span className="icon" href="#">
+                <span className="icon">
                   <i class="bi bi-fullscreen-exit"></i>
                 </span>
               </div>

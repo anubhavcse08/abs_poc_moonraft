@@ -26,7 +26,7 @@ const Form = () => {
       </select>
       <button
         type="submit"
-        className="submit text-sky-600 border-2 border-sky-600"
+        className="submit text-sky-600 border-2 border-sky-600 rounded-md"
       >
         Sort & Filters
       </button>
