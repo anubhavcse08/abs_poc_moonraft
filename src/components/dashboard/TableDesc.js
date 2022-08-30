@@ -9,6 +9,7 @@ class TableDesc extends Component {
       foreCastDetails: foreCastInfo,
       weekWiseDetails: weekWiseData,
     };
+    this.rowCount = 0;
   }
   renderTableHeaderCell = (headerTitle) => {
     return (
@@ -71,27 +72,25 @@ class TableDesc extends Component {
       <Fragment>
         {isStatusBar && (
           <td
-            className={
-              "absolute border-slate-300 bg-white w-24 overflow-hidden"
-            }
+            className={"absolute border-slate-300 bg-white w-24"}
             style={{ width: 76.7 * week + "px", zIndex: 14 - i }}
             key={i}
           >
             {item.forecastInfo.map((data, indexValue) => {
+              let cellCountPerTd = 0;
               if (dataCell.week === data.startWeek) {
-                {
-                  /* item.Title == "KGM K-Cups"  */
+                let marginTop = 0;
+                console.log("rowCount", this.rowCount);
+                if (this.rowCount > 1) {
+                  marginTop = 40 * this.rowCount;
                 }
-                console.log(item.Title, i, indexValue);
+                cellCountPerTd += 1;
+                this.rowCount += 1;
+
                 return (
-                  <DataCellLabel
-                    option={data}
-                    marginTop={
-                      46 * indexValue + (indexValue > 1
-                        ? 46 * (indexValue - 1)
-                        : "" )+ "px"
-                    }
-                  />
+                  <div style={{ top: marginTop }} className="py-1 relative">
+                    <DataCellLabel option={data} marginTop={marginTop} />
+                  </div>
                 );
               }
             })}
@@ -99,7 +98,7 @@ class TableDesc extends Component {
         )}
         {!isStatusBar && (
           <td
-            className="py-2 border border-slate-300 bg-white w-24 overflow-hidden"
+            className="py-2 border border-slate-300 bg-white w-24"
             key={i}
           ></td>
         )}
@@ -132,8 +131,9 @@ class TableDesc extends Component {
 
   renderTableData = () => {
     return this.state.weekWiseDetails.data.map((item, index) => {
+      this.rowCount = 0;
       return (
-        <tr key={index}>
+        <tr style={{ height: 40 * item.forecastInfo.length }} key={index}>
           <td className="py-2 border border-slate-300 bg-white font-semibold w-96 px-2">
             <p className="whitespace-no-wrap text-gray-900 text-sm">
               {item.Title}

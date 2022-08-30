@@ -181,6 +181,6 @@ section {
   width: clamp(6rem, 20%, 12rem);
 }
 
-table tr {
-  height: 200px;
+.data-cell-label {
+  height: 32px;
 }
