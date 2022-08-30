@@ -111,7 +111,7 @@
 }
 
 .text-custom-small {
-  font-size: 0.65rem;
+  font-size: 0.55rem;
 }
 
 section {
@@ -132,16 +132,40 @@ section {
 .filterby {
   margin-left: auto;
 }
-.cell-width-1 { max-width: 7%; }
-.cell-width-2 { max-width: 14%; }
-.cell-width-3 { max-width: 21%; }
-.cell-width-4 { max-width: 28%; }
-.cell-width-5 { max-width: 35%; }
-.cell-width-6 { max-width: 42%; }
-.cell-width-7 { max-width: 49%; }
-.cell-width-8 { max-width: 56%; }
-.cell-width-9 { max-width: 63%; }
-.cell-width-10 { max-width: 70%; }
-.cell-width-11 { max-width: 77%; }
-.cell-width-12 { max-width: 84%; }
-.cell-width-13 { max-width: 91%; }
+.cell-width-1 { width: 4.2rem; }
+.cell-width-2 { width: 8.5rem; }
+.cell-width-3 { width: 12.9rem; }
+.cell-width-4 { width: 17.2rem; }
+.cell-width-5 { width: 21.6rem; }
+.cell-width-6 { width: 25.9rem; }
+.cell-width-7 { width: 30.5rem; }
+.cell-width-8 { width: 35.5rem; }
+.cell-width-9 { width: 39.1rem; }
+.cell-width-10 { width: 43.7rem; }
+.cell-width-11 { width: 48.1rem; }
+.cell-width-12 { width: 52.5rem; }
+.cell-width-13 { width: 56.5rem; }
+
+.status-zone-label {
+  font-size: 0.42rem;
+}
+.custom-height-0, .custom-height-1 {
+  height: 3rem;
+}
+.custom-height-2 {
+  height: 6rem;
+}
+.custom-height-3 {
+  height: 9rem;
+}
+.top-cell-2 {
+  top: 3rem;
+}
+.top-cell-3 {
+  top: 6rem;
+}
+.code-icon {
+  font-size: 6px;
+  margin: 0px 3px 0 4px;
+  font-weight: 700;
+}
