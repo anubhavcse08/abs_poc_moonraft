@@ -169,3 +169,9 @@ section {
   margin: 0px 3px 0 4px;
   font-weight: 700;
 }
+.bg-status-planning-yellow {
+  background-color: rgb(133 77 14);
+}
+.text-status-planning-yellow {
+  color: rgb(161 98 7);
+}

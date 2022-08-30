@@ -22,7 +22,7 @@ const getStatusColor = (status) => {
     case "Pending with Vendor":
       bgColor = 'bg-yellow-100';
       borderColor = 'border border-l-4 border-yellow-500';
-      textStatusColor = 'yellow-800';
+      textStatusColor = 'status-planning-yellow';
       break;
     default:
       break;
