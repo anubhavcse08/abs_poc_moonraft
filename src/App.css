@@ -135,11 +135,22 @@ section {
 .button-more {
   margin-left: auto;
 }
-
 .filterby {
   margin-left: auto;
 }
-
+.cell-width-1 { max-width: 7%; }
+.cell-width-2 { max-width: 14%; }
+.cell-width-3 { max-width: 21%; }
+.cell-width-4 { max-width: 28%; }
+.cell-width-5 { max-width: 35%; }
+.cell-width-6 { max-width: 42%; }
+.cell-width-7 { max-width: 49%; }
+.cell-width-8 { max-width: 56%; }
+.cell-width-9 { max-width: 63%; }
+.cell-width-10 { max-width: 70%; }
+.cell-width-11 { max-width: 77%; }
+.cell-width-12 { max-width: 84%; }
+.cell-width-13 { max-width: 91%; }
 .search-box-2 {
   width: clamp(6rem, 20%, 12rem);
 }

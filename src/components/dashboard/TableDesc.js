@@ -44,58 +44,34 @@ class TableDesc extends Component {
             }
         }
         return { week, isStatusBar };
-        // forecastInfo.map((data, index) => {
-        //     if(dataCell.week === data.startWeek) {
-        //         week = data.weeks;
-        //         isStatusBar = true;
-        //         return {week, isStatusBar};
-        //     }
-        // })
     }
-    renderCellStatusLabel = (isStatusBar, week, item, dataCell, i) => {
-        // console.log('WWWWWWWWWWWWWWWWWWW', week)
+    renderCellStatusLabel = (isStatusBar, week, item, dataCell, i, count) => {
         return <>
-            {isStatusBar && <td colSpan={week} className='py-2 border border-slate-300 bg-white w-24 px-2 overflow-hidden' key={i}>
+            {isStatusBar && <td colSpan={week} className='py-2 border border-slate-300 bg-white w-24 overflow-hidden' key={i}>
                 {item.forecastInfo.map((data, indexValue) => {
                     if (dataCell.week === data.startWeek) {
+                        console.log(dataCell.week, '===', data.startWeek, ' ------ ', data);
                         return <DataCellLabel option={data} />
                     }
                 })}
             </td>}
-            {!isStatusBar && <td className='py-2 border border-slate-300 bg-white w-24 px-2 overflow-hidden' key={i}></td>}
+            {!isStatusBar && count <= i && <td className='py-2 border border-slate-300 bg-white w-24 overflow-hidden' key={i}></td>}
             </>
     }
     renderElement = (item) => {
-        for (let i = 0; i < this.state.foreCastDetails.length; i++) {
-            const element = this.state.foreCastDetails[i];
+        let count = 0;
+        // for (let i = 0; i < this.state.foreCastDetails.length; i++) {
+        //     const element = this.state.foreCastDetails[i];
+        return this.state.foreCastDetails.map((element, i) => {
+            const { week, isStatusBar } = this.getColspanCell(item.forecastInfo, element);
+            count = isStatusBar ? i + week : count;
 
-            const { totalReserveCell, week, isStatusBar } = this.getColspanCell(item.forecastInfo, element);
-            console.log(i);
-            // i = isStatusBar ? i + week : i;
+            // console.log(count, ' --- ', i, ' --- ', week, ' --- ', isStatusBar);
 
-            console.log(i, ' --- ', week);
-
-            return this.renderCellStatusLabel(isStatusBar, week, item, element, i);
-        }
-        // return this.state.foreCastDetails.map((dataCell, i) => {
-        //     // let totalReserveCell = 0;
-        //     // return item.forecastInfo.map((data, index) => {
-        //     //     // totalReserveCell += data.weeks;
-        //     //     if(dataCell.week === data.startWeek) {
-        //     //         // i += data.weeks;
-        //     //         return <>
-        //     //             <td colSpan={data.weeks} className='py-2 border border-slate-300 bg-white w-24 px-2' key={i}>
-        //     //                 <DataCellLabel option={data} />
-        //     //             </td>
-        //     //         </>
-        //     //     }
-        //     // })
-        //     const { totalReserveCell, week, isStatusBar } = this.getColspanCell(item.forecastInfo, dataCell);
-        //     i = isStatusBar ? i + week : i;
-        //     console.log(i, ' --- ', this.getColspanCell(item.forecastInfo, dataCell))
-        //     return this.renderCellStatusLabel(isStatusBar, week, item, dataCell, i);
-        // })
+            return this.renderCellStatusLabel(isStatusBar, week, item, element, i, count);
+        });
     }
+
     renderTableData = () => {
         return this.state.weekWiseDetails.data.map((item, index) => {
             return <tr key={index}>
