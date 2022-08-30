@@ -129,6 +129,9 @@ section {
 .button-more {
   margin-left: auto;
 }
+.filterby {
+  margin-left: auto;
+}
 .cell-width-1 { max-width: 7%; }
 .cell-width-2 { max-width: 14%; }
 .cell-width-3 { max-width: 21%; }
