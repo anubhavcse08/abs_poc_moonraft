@@ -10,7 +10,7 @@ const TimeButtonMenu = (props) => {
   };
   return (
     <div className="tabs">
-      <ul className="flex items-center text-xs font-medium">
+      <ul className="flex items-stretch text-xs font-medium">
         {tabs.map((tab, i) => (
           <li
             className={"tab " + (checked == tab ? "is-active" : "")}

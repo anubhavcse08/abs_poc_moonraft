@@ -1,8 +1,6 @@
-
-
 .tabs li {
   border-bottom: 1px solid var(--border);
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.7rem;
 }
 
 .tabs li:first-child {
@@ -30,4 +28,10 @@
 .tabs li.is-active {
   border-bottom: 4px solid var(--border-active);
   padding-bottom: 5px;
+}
+
+@media (min-width: 768px) {
+  .tabs li {
+    padding: 0.5rem 1rem;
+  }
 }

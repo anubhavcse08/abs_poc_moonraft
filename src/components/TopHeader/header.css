@@ -1,6 +1,6 @@
 .search-box {
   margin-left: auto;
-  width: clamp(170px, 28%, 350px);
+  max-width: 350px;
 }
 
 .global-search {
@@ -15,32 +15,25 @@
 }
 
 .header-icon {
-  font-size: 1rem;
   color: rgb(162, 159, 159);
+  font-size: 1rem;
   position: relative;
-}
-
-.user {
-  margin-left: 1rem;
-  margin-right: 0.5rem;
 }
 
 .user img {
-  border-radius: 50%;
-  position: relative;
-  flex-shrink: 0;
-  width: 40px;
-  aspect-ratio: 1;
   border: 2px solid white;
+  border-radius: 50%;
+  flex-shrink: 0;
+  position: relative;
 }
 
 .user-pic::after {
+  bottom: 12px;
+  color: rgb(253 186 116);
   content: ".";
   font-size: 40px;
   position: absolute;
-  color: rgb(253 186 116);
-  bottom: 14px;
-  right: 8px;
+  right: 0;
 }
 
 .user-name {
@@ -53,16 +46,45 @@
 }
 
 .bi-bell::after {
+  color: rgb(249 115 22);
   content: attr(data-notification);
   font-size: 44px;
-  position: absolute;
-  color: rgb(249 115 22);
-  top: -16px;
   left: 8px;
+  position: absolute;
+  top: -16px;
 }
 
+@media (min-width: 768px) {
+  .user-pic::after {
+    bottom: 14px;
+    right: 8px;
+  }
+}
 
-@media (min-width: 768px) { 
+@media (max-width: 768px) {
+  .user-details {
+    background-color: white;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    right: 0px;
+    position: absolute;
+    top: 34px;
+    width: 140px;
+    border-radius: 4px;
+    padding: 8px;
+  }
 
-  
- }
+  .user-details::before {
+    content: "";
+    height: 8px;
+    position: absolute;
+    width: 8px;
+    right: 12px;
+    top: -2px;
+    background-color: white;
+    transform: rotate(45deg);
+  }
+
+  .user-pic:hover + .user-details {
+    display: block;
+  }
+}

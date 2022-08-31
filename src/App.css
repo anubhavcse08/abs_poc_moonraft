@@ -6,6 +6,15 @@
   --border-active: var(--secondary-color);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
 .highcharts-grid-line,
 .highcharts-axis,
 .highcharts-axis-labels,
@@ -122,8 +131,7 @@
 
 section {
   background-color: #f8f7ff;
-  padding: 24px;
-  padding: 1rem 1.5rem 0.5rem;
+  padding: 0.75rem;
   margin-bottom: 4px;
 }
 
@@ -133,9 +141,6 @@ section {
 }
 
 .button-more {
-  margin-left: auto;
-}
-.filterby {
   margin-left: auto;
 }
 .cell-width-1 {
@@ -183,4 +188,13 @@ section {
 
 .data-cell-label {
   height: 32px;
+}
+
+
+@media (min-width: 768px) {
+  section {
+    padding: 24px;
+    padding: 1rem 1.5rem 0.5rem;
+    margin-bottom: 4px;
+  }
 }
