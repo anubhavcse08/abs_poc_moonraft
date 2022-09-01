@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { windowResizable } from "../../utils/common";
+import React from "react";
 import SplineChart from "../SplineChart";
 
 const GraphCard = (props) => {
@@ -7,12 +6,6 @@ const GraphCard = (props) => {
     options: { title, actualAmount, tagetAmount, growthPercent },
     isGrowth,
   } = props;
-  // useEffect(() => {
-  //     windowResizable();
-  // //   return () => {
-  // //     second
-  // //   }
-  // }, []);
 
   return (
     <div className="card-layout w-60 shrink-0 px-2 py-1">

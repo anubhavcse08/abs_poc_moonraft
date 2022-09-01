@@ -31,7 +31,7 @@ class TableDesc extends Component {
         return <tr>
             <th className='py-2 border border-slate-300 bg-white font-semibold w-96 px-2 text-left'>{headerTitle}</th>
             {this.state.foreCastDetails.map((item, index) => {
-                return <th key={index} className='py-2 border border-slate-300 bg-white font-semibold text-center w-24'>
+                return <th key={index} className={`${headerTitle === 'Weeks' ? 'py-1' : 'py-3'} border border-slate-300 bg-white font-semibold text-center w-24`}>
                     {headerTitle === 'Weeks' ?
                         <><p className="whitespace-no-wrap text-gray-500 text-xs text-custom-small">{item.week}</p>
                             <p className='whitespace-no-wrap text-gray-600 text-xs'>{item.weekNumber}</p></> : <>
@@ -64,7 +64,7 @@ class TableDesc extends Component {
     }
     renderCellStatusLabel = (isStatusBar, week, item, dataCell, i, count) => {
         return <>
-            {isStatusBar && <td className={`py-2 custom-height-${item.noOfRows} border border-slate-300 bg-white w-24 relative`} key={i}>
+            {isStatusBar && <td className={`py-2 custom-height-${item.noOfRows} border border-x-slate-300 bg-white w-24 relative`} key={i}>
                 {item.forecastInfo.map((data) => {
                     if (dataCell.week === data.startWeek) {
                         return <DataCellLabel option={data} row={data.$row} />
@@ -72,7 +72,7 @@ class TableDesc extends Component {
                     return <></>
                 })}
             </td>}
-            {!isStatusBar && <td className={`py-2 custom-height-${item.noOfRows} border border-slate-300 bg-white w-24 relative`} key={i}></td>}
+            {!isStatusBar && <td className={`py-2 custom-height-${item.noOfRows} border border-x-slate-300 bg-white w-24 relative`} key={i}></td>}
             {/* {!isStatusBar && count <= i && <td className='py-2 border border-slate-300 bg-white w-24' key={i}></td>} */}
         </>
     }
@@ -87,10 +87,10 @@ class TableDesc extends Component {
 
     renderTableData = () => {
         return this.state.weekWiseDetails.data.map((item, index) => {
-            return <tr key={index}>
-                <td className='py-2 border border-slate-300 bg-white font-semibold w-96 px-2'>
+            return <tr key={index} className="border-dotted border-t-2 border-y-slate-300">
+                <td className='py-2 border border-x-slate-300 bg-white font-semibold w-96 px-2'>
                     <div className='flex flex-row items-baseline'>
-                        <input type="checkbox" class="checked:bg-blue-500" />
+                        <input type="checkbox" class="checked:bg-blue-500 cursor-pointer" />
                         <p className='whitespace-no-wrap text-gray-900 text-sm ml-1'>{item.Title}</p>
                     </div>
                 </td>
