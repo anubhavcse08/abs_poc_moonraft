@@ -88,362 +88,440 @@ export const weekWiseData = {
     data: [
         {
             Title: "Lipton Pure Leaf Tea 64..",
+            noOfRows: 1,
             forecastInfo: [{
                 startWeek: "10/03/22",
                 Forecast: "$12.99",
                 status: "Approved",
-                weeks: 1
+                weeks: 1,
+                $row: 1
             }]
         },
         {
             Title: "Intelligentsia 12oz-181850-25",
+            noOfRows: 1,
             forecastInfo: [{
                 startWeek: "10/03/22",
                 Forecast: "$20.99",
                 status: "Planning",
-                weeks: 3
+                weeks: 3,
+                $row: 1
             },
             {
                 startWeek: "11/21/22",
                 Forecast: "$20.99",
                 status: "Pending with Vendor",
-                weeks: 3
+                weeks: 3,
+                $row: 1
             }]
         },
         {
             Title: "STARBUCK COFFEE",
+            noOfRows: 2,
             forecastInfo: [{
                 startWeek: "10/03/22",
                 Forecast: "$12.99",
                 status: "Approved",
-                weeks: 9
+                weeks: 9,
+                $row: 1
             },
             {
                 startWeek: "10/03/22",
                 Forecast: "$20.99",
                 status: "Draft",
-                weeks: 9
+                weeks: 9,
+                $row: 2
             }]
         },
         {
             Title: "Starbucks K-Cups...",
+            noOfRows: 2,
             forecastInfo: [{
                 startWeek: "10/03/22",
                 Forecast: "$20.99",
                 status: "Draft",
-                weeks: 3
+                weeks: 3,
+                $row: 1
             },
             {
                 startWeek: "11/07/22",
                 Forecast: "$20.99",
                 status: "Draft",
-                weeks: 6
+                weeks: 6,
+                $row: 1
             },
             {
                 startWeek: "10/03/22",
                 Forecast: "$20.99",
                 status: "Executed",
-                weeks: 3
+                weeks: 3,
+                $row: 2
             }]
         },
         {
             Title: "Chameleon Cold Brew...",
+            noOfRows: 2,
             forecastInfo: [{
                 startWeek: "10/03/22",
                 Forecast: "$12.99",
                 status: "Approved",
-                weeks: 13
+                weeks: 13,
+                $row: 1
             },
             {
                 startWeek: "10/03/22",
                 Forecast: "$12.99",
                 status: "Approved",
-                weeks: 2
+                weeks: 2,
+                $row: 2
             },
             {
                 startWeek: "10/24/22",
                 Forecast: "$20.99",
                 status: "Draft",
-                weeks: 3
+                weeks: 3,
+                $row: 2
             },
             {
                 startWeek: "11/14/22",
                 Forecast: "$20.99",
                 status: "Draft",
-                weeks: 3
+                weeks: 3,
+                $row: 2
             },
             {
                 startWeek: "12/12/22",
                 Forecast: "$20.99",
                 status: "Draft",
-                weeks: 3
+                weeks: 3,
+                $row: 2
             }]
         },
         {
             Title: "NESCAFE Clasico-638264-25",
+            noOfRows: 2,
             forecastInfo: [{
                 startWeek: "10/03/22",
                 Forecast: "$12.99",
                 status: "Planning",
-                weeks: 13
+                weeks: 13,
+                $row: 1
             },
             {
                 startWeek: "10/03/22",
                 Forecast: "$20.99",
                 status: "Draft",
-                weeks: 5
+                weeks: 5,
+                $row: 2
             },
             {
                 startWeek: "11/14/22",
                 Forecast: "$20.99",
                 status: "Draft",
-                weeks: 4
+                weeks: 4,
+                $row: 2
             }]
         },
         {
             Title: "bai 18 FZ-180458-25",
+            noOfRows: 1,
             forecastInfo: [{
                 startWeek: "10/03/22",
                 Forecast: "$12.99",
                 status: "Approved",
-                weeks: 1
+                weeks: 1,
+                $row: 1
             }]
         },
         {
             Title: "OVALTINE RICH",
+            noOfRows: 1,
             forecastInfo: [{
                 startWeek: "10/03/22",
                 Forecast: "$12.99",
                 status: "Approved",
-                weeks: 13
+                weeks: 13,
+                $row: 1
             }]
         },
         {
             Title: "Peet's Bags 12oz-182363-25",
+            noOfRows: 1,
             forecastInfo: [{
                 startWeek: "10/24/22",
                 Forecast: "$20.99",
                 status: "Draft",
-                weeks: 5
+                weeks: 5,
+                $row: 1
             }]
         },
         {
-            Title: "Peet's Bags 12oz-188340-25",
+            Title: "Peet's Bags 18oz-188340-25",
+            noOfRows: 1,
             forecastInfo: [{
                 startWeek: "10/03/22",
                 Forecast: "$20.99",
                 status: "Draft",
-                weeks: 4
+                weeks: 4,
+                $row: 1
             }]
         },
         {
             Title: "KGM K-Cups 12ct-182671-25",
+            noOfRows: 3,
             forecastInfo: [{
                 startWeek: "10/03/22",
                 Forecast: "$20.99",
                 status: "Approved",
-                weeks: 13
+                weeks: 13,
+                $row: 1
             },
             {
                 startWeek: "10/03/22",
                 Forecast: "$12.99",
                 status: "Draft",
-                weeks: 1
+                weeks: 1,
+                $row: 2
             },
             {
                 startWeek: "10/17/22",
                 Forecast: "$20.99",
                 status: "Draft",
-                weeks: 3
+                weeks: 3,
+                $row: 2
             },
             {
                 startWeek: "11/07/22",
                 Forecast: "$20.99",
                 status: "Draft",
-                weeks: 5
+                weeks: 5,
+                $row: 2
             },
             {
                 startWeek: "12/05/22",
                 Forecast: "$20.99",
                 status: "Draft",
-                weeks: 4
+                weeks: 4,
+                $row: 3
             }]
         },
         {
-            Title: "Lipton Pure 2",
+            Title: "Lipton Pure - 2",
+            noOfRows: 1,
             forecastInfo: [{
                 startWeek: "10/03/22",
                 Forecast: "$12.99",
                 status: "Approved",
-                weeks: 1
+                weeks: 1,
+                $row: 1
             }]
         },
         {
-            Title: "Intelligentsia 12oz-181850-25 - 2",
+            Title: "Intelligentsia - 2",
+            noOfRows: 1,
             forecastInfo: [{
                 startWeek: "10/03/22",
                 Forecast: "$20.99",
                 status: "Planning",
-                weeks: 3
+                weeks: 3,
+                $row: 1
             },
             {
                 startWeek: "11/21/22",
                 Forecast: "$20.99",
                 status: "Pending with Vendor",
-                weeks: 3
+                weeks: 3,
+                $row: 1
             }]
         },
         {
             Title: "STARBUCK COFFEE - 2",
+            noOfRows: 2,
             forecastInfo: [{
                 startWeek: "10/03/22",
                 Forecast: "$12.99",
                 status: "Approved",
-                weeks: 9
+                weeks: 9,
+                $row: 1
             },
             {
-                startWeek: "11/21/22",
+                startWeek: "10/03/22",
                 Forecast: "$20.99",
                 status: "Draft",
-                weeks: 3
+                weeks: 9,
+                $row: 2
             }]
         },
         {
-            Title: "Starbucks K-Cups - 2...",
+            Title: "Starbucks K-Cups - 2",
+            noOfRows: 2,
             forecastInfo: [{
                 startWeek: "10/03/22",
                 Forecast: "$20.99",
                 status: "Draft",
-                weeks: 3
+                weeks: 3,
+                $row: 1
             },
             {
                 startWeek: "11/07/22",
                 Forecast: "$20.99",
                 status: "Draft",
-                weeks: 6
+                weeks: 6,
+                $row: 1
             },
             {
-                startWeek: "11/07/22",
+                startWeek: "10/03/22",
                 Forecast: "$20.99",
                 status: "Executed",
-                weeks: 3
+                weeks: 3,
+                $row: 2
             }]
         },
         {
             Title: "Chameleon Cold Brew - 2...",
+            noOfRows: 2,
             forecastInfo: [{
                 startWeek: "10/03/22",
                 Forecast: "$12.99",
                 status: "Approved",
-                weeks: 13
+                weeks: 13,
+                $row: 1
+            },
+            {
+                startWeek: "10/03/22",
+                Forecast: "$12.99",
+                status: "Approved",
+                weeks: 2,
+                $row: 2
             },
             {
                 startWeek: "10/24/22",
                 Forecast: "$20.99",
                 status: "Draft",
-                weeks: 3
+                weeks: 3,
+                $row: 2
             },
             {
                 startWeek: "11/14/22",
                 Forecast: "$20.99",
                 status: "Draft",
-                weeks: 3
+                weeks: 3,
+                $row: 2
             },
             {
                 startWeek: "12/12/22",
                 Forecast: "$20.99",
                 status: "Draft",
-                weeks: 3
+                weeks: 3,
+                $row: 2
             }]
         },
         {
             Title: "NESCAFE Clasico-638264-25 - 2",
+            noOfRows: 2,
             forecastInfo: [{
                 startWeek: "10/03/22",
                 Forecast: "$12.99",
                 status: "Planning",
-                weeks: 13
+                weeks: 13,
+                $row: 1
             },
             {
                 startWeek: "10/03/22",
                 Forecast: "$20.99",
                 status: "Draft",
-                weeks: 5
+                weeks: 5,
+                $row: 2
             },
             {
                 startWeek: "11/14/22",
                 Forecast: "$20.99",
                 status: "Draft",
-                weeks: 4
+                weeks: 4,
+                $row: 2
             }]
         },
         {
             Title: "bai 18 FZ-180458-25 - 2",
+            noOfRows: 1,
             forecastInfo: [{
                 startWeek: "10/03/22",
                 Forecast: "$12.99",
                 status: "Approved",
-                weeks: 1
+                weeks: 1,
+                $row: 1
             }]
         },
         {
             Title: "OVALTINE RICH - 2",
+            noOfRows: 1,
             forecastInfo: [{
                 startWeek: "10/03/22",
                 Forecast: "$12.99",
                 status: "Approved",
-                weeks: 13
+                weeks: 13,
+                $row: 1
             }]
         },
         {
             Title: "Peet's Bags 12oz-182363-25 - 2",
+            noOfRows: 1,
             forecastInfo: [{
                 startWeek: "10/24/22",
                 Forecast: "$20.99",
                 status: "Draft",
-                weeks: 5
+                weeks: 5,
+                $row: 1
             }]
         },
         {
-            Title: "Peet's Bags 12oz-188340-25 - 2",
+            Title: "Peet's Bags 18oz-188340-25 - 2",
+            noOfRows: 1,
             forecastInfo: [{
                 startWeek: "10/03/22",
                 Forecast: "$20.99",
                 status: "Draft",
-                weeks: 4
+                weeks: 4,
+                $row: 1
             }]
         },
         {
             Title: "KGM K-Cups 12ct-182671-25 - 2",
+            noOfRows: 3,
             forecastInfo: [{
                 startWeek: "10/03/22",
                 Forecast: "$20.99",
                 status: "Approved",
-                weeks: 13
+                weeks: 13,
+                $row: 1
             },
             {
                 startWeek: "10/03/22",
                 Forecast: "$12.99",
                 status: "Draft",
-                weeks: 1
+                weeks: 1,
+                $row: 2
             },
             {
                 startWeek: "10/17/22",
                 Forecast: "$20.99",
                 status: "Draft",
-                weeks: 3
+                weeks: 3,
+                $row: 2
             },
             {
                 startWeek: "11/07/22",
                 Forecast: "$20.99",
                 status: "Draft",
-                weeks: 5
+                weeks: 5,
+                $row: 2
             },
             {
                 startWeek: "12/05/22",
                 Forecast: "$20.99",
                 status: "Draft",
-                weeks: 4
+                weeks: 4,
+                $row: 3
             }]
         }
     ]
