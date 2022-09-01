@@ -146,19 +146,19 @@ section {
 }
 
 
-.cell-width-1 { width: 4.2rem; }
-.cell-width-2 { width: 8.5rem; }
-.cell-width-3 { width: 12.9rem; }
-.cell-width-4 { width: 17.2rem; }
-.cell-width-5 { width: 21.6rem; }
-.cell-width-6 { width: 25.9rem; }
-.cell-width-7 { width: 30.5rem; }
-.cell-width-8 { width: 35.5rem; }
-.cell-width-9 { width: 39.1rem; }
-.cell-width-10 { width: 43.7rem; }
-.cell-width-11 { width: 48.1rem; }
-.cell-width-12 { width: 52.5rem; }
-.cell-width-13 { width: 56.5rem; }
+.cell-width-1 { width: 5rem; }
+.cell-width-2 { width: 10rem; }
+.cell-width-3 { width: 15rem; }
+.cell-width-4 { width: 20rem; }
+.cell-width-5 { width: 25rem; }
+.cell-width-6 { width: 30rem; }
+.cell-width-7 { width: 35rem; }
+.cell-width-8 { width: 40rem; }
+.cell-width-9 { width: 45rem; }
+.cell-width-10 { width: 50rem; }
+.cell-width-11 { width: 55rem; }
+.cell-width-12 { width: 60rem; }
+.cell-width-13 { width: 65rem; }
 
 .status-zone-label {
   font-size: 0.42rem;
