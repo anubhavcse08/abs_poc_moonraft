@@ -1,5 +1,5 @@
 import "./header.css";
-import profile from "../../assets/dummy-profile.png";
+import profile from "../../assets/images/dummy-profile.png";
 import { useEffect } from "react";
 
 const TopHeader = (prop) => {

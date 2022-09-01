@@ -1,5 +1,4 @@
-import React from "react";
-import "./App.css";
+import React, { useEffect, useState } from "react";
 import TableDesc from "./components/dashboard/TableDesc";
 import TopHeader from "./components/TopHeader/TopHeader";
 import GraphCard from "./components/metrics/GraphCard";
@@ -8,6 +7,8 @@ import Header from "./components/header/header";
 import Form from "./components/Form/form";
 import { header } from "./apiData/header";
 import TitleForecastStatus from "./components/dashboard/TitleForecastStatus";
+import { getMetricInfo } from "./utils/commonUtil";
+import "./App.css";
 
 const App = () => {
   const options = {
@@ -16,24 +17,14 @@ const App = () => {
     tagetAmount: "$19.5M",
     growthPercent: "3.5%",
   };
-  // function findSubsets(subset, nums, output, index) {
-  //   console.log(output, 'BBBBBBBBBB ', index)
-  //   // Base Condition
-  //   if (index === nums.length) {
-  //     subset.push(output);
-  //     return;
-  //   }
 
-  //   // Not Including Value which is at Index
-  //   findSubsets(subset, nums, [...output], index + 1);
-  //   console.log(output, ' Afterrrrrrrrr ', index)
-  //   // Including Value which is at Index
-  //   output.push(nums[index]);
-  //   findSubsets(subset, nums, [...output], index + 1);
-  // }
-  // let subset = [];
-  // console.log("subsettttttttttttttttttttttttttttttttttttttt");
-  // findSubsets(subset, [1, 2, 3], [], 0);
+const [metricsData, setMetricsData] = useState(false);
+
+// useEffect(() => {
+//   const metricInfo = getMetricInfo("apiData/header");
+//   setMetricsData(metricInfo);
+
+// });
 
   return (
     <div className="App">
