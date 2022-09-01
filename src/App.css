@@ -15,7 +15,6 @@
   display: none;
 }
 .App {
-  /* margin: 5px; */
   max-width: 1366px;
   margin: 0 auto;
   background-color: white;
@@ -24,14 +23,12 @@ p {
   margin-bottom: 0;
 }
 .sm-line-height {
-  line-height: 4px;
+  line-height: 5px;
 }
 .spline-graph .highcharts-container {
   margin-top: -8px;
   width: 100px !important;
   height: 62px !important;
-  /* width: 150px !important;
-  height: 100px !important; */
 }
 .spline-graph .highcharts-root {
   width: 100px;
@@ -47,11 +44,8 @@ p {
   flex-direction: column;
 }
 .card-graph-container {
-  /* border: 1px solid #ddd; */
   margin-top: 12px;
-  /* border-radius: 5px; */
   flex-wrap: wrap;
-  /* box-shadow: 0 1px 2px rgba(0,0,0,0.15); */
 }
 .card-layout {
   border: 1px solid #ddd;
@@ -185,4 +179,11 @@ section {
   border-bottom: 1px solid rgb(20 184 166);
   border-top: 1px solid rgb(20 184 166);
   border-right: 1px solid rgb(20 184 166);
+}
+.title-row {
+  text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 80%;
+
 }
