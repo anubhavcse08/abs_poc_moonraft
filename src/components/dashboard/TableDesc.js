@@ -10,6 +10,23 @@ class TableDesc extends Component {
             weekWiseDetails: weekWiseData
         }
     }
+    getForecastStatus = (targetType) => {
+        let bgColor = 'bg-sky-600';
+        switch (targetType) {
+            case "Good":
+                bgColor = "bg-sky-600";
+                break;
+            case "Average":
+                bgColor = "bg-sky-300";
+                break;
+            case "Low":
+                bgColor = "bg-sky-100";
+                break;
+            default:
+                break;
+        }
+        return bgColor;
+    }
     renderTableHeaderCell = (headerTitle) => {
         return <tr>
             <th className='py-2 border border-slate-300 bg-white font-semibold w-96 px-2 text-left'>{headerTitle}</th>
@@ -19,7 +36,7 @@ class TableDesc extends Component {
                         <><p className="whitespace-no-wrap text-gray-500 text-xs text-custom-small">{item.week}</p>
                             <p className='whitespace-no-wrap text-gray-600 text-xs'>{item.weekNumber}</p></> : <>
                             <p className='whitespace-no-wrap text-gray-600 text-xs'>{item.target}</p>
-                            <p className="bg-sky-600 py-3 w-full"></p>
+                            <p className={`${this.getForecastStatus(item.targetType)} py-3 w-full`}></p>
                         </>}
                 </th>
             })}

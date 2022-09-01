@@ -20,6 +20,12 @@
   margin: 0 auto;
   background-color: white;
 }
+p {
+  margin-bottom: 0;
+}
+.sm-line-height {
+  line-height: 4px;
+}
 .spline-graph .highcharts-container {
   margin-top: -8px;
   width: 100px !important;
@@ -153,16 +159,16 @@ section {
   height: 3rem;
 }
 .custom-height-2 {
-  height: 6rem;
+  height: 5.4rem;
 }
 .custom-height-3 {
-  height: 9rem;
+  height: 8rem;
 }
 .top-cell-2 {
-  top: 3rem;
+  top: 2.9rem;
 }
 .top-cell-3 {
-  top: 6rem;
+  top: 5.4rem;
 }
 .code-icon {
   font-size: 6px;
@@ -174,4 +180,9 @@ section {
 }
 .text-status-planning-yellow {
   color: rgb(161 98 7);
+}
+.status-planning-border {
+  border-bottom: 1px solid rgb(20 184 166);
+  border-top: 1px solid rgb(20 184 166);
+  border-right: 1px solid rgb(20 184 166);
 }
