@@ -1,5 +1,4 @@
 import { Component } from "react";
-import { DatePicker } from "antd";
 import "./App.css";
 import TableDesc from "./components/dashboard/TableDesc";
 import TopHeader from "./components/TopHeader/TopHeader";
@@ -9,79 +8,7 @@ import SplineChart from "./components/SplineChart";
 import Header from "./components/header/header";
 import Form from "./components/Form/form";
 import { header } from "./apiData/header";
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-} from "chart.js";
-import { Bar } from "react-chartjs-2";
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
-
-export const chartOptions = {
-  indexAxis: "y",
-  elements: {
-    bar: {
-      borderWidth: 2,
-    },
-  },
-  responsive: true,
-  plugins: {
-    legend: {
-      position: "right",
-    },
-    title: {
-      display: false,
-      text: "Chart.js Horizontal Bar Chart",
-    },
-  },
-  interaction: {
-    intersect: false,
-  },
-  scales: {
-    x: {
-      stacked: true,
-      grid: { offset: true, drawBorder: true },
-    },
-    y: {
-      stacked: true,
-      max: "April",
-    },
-  },
-};
-
-const labels = ["January", "February", "March", "April", "May", "June", "July"];
-
-export const data = {
-  labels,
-  datasets: [
-    {
-      label: "Dataset 1",
-      data: [100, [200, 400], 400, 500, 600],
-      borderColor: "rgb(255, 99, 132)",
-      backgroundColor: "rgba(255, 99, 132, 0.5)",
-      stack: "Stack 0",
-    },
-    {
-      label: "Dataset 2",
-      data: [100, [400, 600], 300, 400, 500, 600],
-      borderColor: "rgb(53, 162, 235)",
-      backgroundColor: "rgba(53, 162, 235, 0.5)",
-      stack: "Stack 0",
-    },
-  ],
-};
 class App extends Component {
   constructor(props) {
     super(props);

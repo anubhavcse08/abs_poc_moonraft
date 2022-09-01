@@ -1,5 +1,6 @@
 import "./header.css";
 import profile from "../../assets/dummy-profile.png";
+import { useEffect } from "react";
 
 const TopHeader = (prop) => {
   document.onkeyup = function (e) {
@@ -8,13 +9,23 @@ const TopHeader = (prop) => {
     }
   };
 
-  // searchBox.addEventListener()
+  useEffect(() => {
+    const outsideSearch = document.querySelector(".modal-background");
+    outsideSearch.addEventListener("click", (e) => {
+      const searchBox = document.getElementById("global-search-box");
+      searchBox.classList.remove("fade-in");
+      searchBox.classList.add("fade-out");
+      searchBox?.classList.add("hidden");
+      // searchBox.addEventListener("animationend", () => {
+      // },1);
+    });
+  });
 
   const toggleSearchBox = () => {
     const searchBox = document.getElementById("global-search-box");
-
-    console.log("search", searchBox);
-    searchBox?.classList.toggle("hidden");
+    searchBox?.classList.remove("hidden");
+    searchBox.classList.add("fade-in");
+    searchBox.classList.remove("fade-out");
   };
   return (
     <div class="sticky top-0 z-50 bg-slate-100 px-5 md:px-5 py-2">
@@ -23,13 +34,16 @@ const TopHeader = (prop) => {
           <span class="md:py-2 md:pr-4 md:border-r-2 md:border-dotted uppercase border-blue-200">
             {prop.header.type}
           </span>
-          <span class="mt-1 md:mt-0 md:py-2 md:pl-4">{prop.header.address}</span>
+          <span class="mt-1 md:mt-0 md:py-2 md:pl-4">
+            {prop.header.address}
+          </span>
         </div>
         <div
           className="search-box md:relative text-xs md:w-3/12 hidden md:block"
           id="global-search-box"
         >
-          <div class="flex absolute inset-y-0 right-4 items-center pl-3 pointer-events-none text-slate-400">
+          <div className="modal-background md:hidden"></div>
+          <div class="flex absolute inset-y-0 right-8 items-center md:pl-3 pointer-events-none text-slate-400">
             <i class="bi bi-search"></i>
           </div>
           <input

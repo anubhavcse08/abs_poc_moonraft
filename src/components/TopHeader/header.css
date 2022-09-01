@@ -98,15 +98,41 @@
     z-index: 10;
   }
 
-  .search-box::after {
-    content: "";
+  .modal-background {
     position: absolute;
-    height: calc(100vh - 52px);
     width: 100%;
     inset: 0;
     top: 52px;
+    height: 100vh;
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.6);
   }
+}
 
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.fade-in {
+  animation: fade-in 250ms forwards;
+}
+
+.fade-out {
+  animation: fade-out 250ms forwards;
 }
