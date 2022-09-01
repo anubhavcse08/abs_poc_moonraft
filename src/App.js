@@ -52,7 +52,9 @@ const App = () => {
             <div className="text-base ">
               <i class="bi bi-chevron-contract mr-1"></i>Metrics
             </div>
-            <button class="button-more text-sky-600 text-xs md:text-sm ">More</button>
+            <button class="button-more text-sky-600 text-xs md:text-sm ">
+              More
+            </button>
           </div>
           <div class="card-body py-3 px-4">
             <TimeButtonMenu />
@@ -100,7 +102,7 @@ const App = () => {
                 ></input>
               </div>
               <div class="filterby mt-1 ml-4 md:ml-auto order-5">
-                <label>Filter by:</label>
+                <label className="text-gray-500">Filter by:</label>
                 <select class="font-medium ml-1 pr-1" onChange={onSelectStatus}>
                   <option value="Status" selected>Status</option>
                   <option value="Accepted">Accepted</option>
@@ -123,15 +125,17 @@ const App = () => {
           <div class="card-body py-3 px-4">
             <TitleForecastStatus />
             <TableDesc selectStatus={selectStatus} />
-            <div className="flex flex-row justify-center">
-              <button className="py-1.5 px-3.5 font-medium text-sky-700 border-2 border-sky-700 rounded-lg">Load More</button>
+            <div className="flex justify-center">
+              <button className="px-1 py-0.5 text-sky-600 mx-auto rounded border md:border-2 border-sky-600 md:rounded-md text-xs">
+                Load More
+              </button>
             </div>
             {/* <Bar options={chartOptions} data={data} /> */}
           </div>
-        </div>
-      </section>
-    </div>
+        </div >
+      </section >
+    </div >
   );
-}
+};
 
 export default App;

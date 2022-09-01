@@ -16,7 +16,7 @@ const getColspanCell = (forecastInfo, dataCell) => {
 }
 const renderCellStatusLabel = (isStatusBar, item, dataCell, i) => {
     return <>
-        {isStatusBar && <td className={`py-2 custom-height-${item.noOfRows} border border-x-slate-300 bg-white w-24 relative`} key={i}>
+        {isStatusBar && <td className={`py-2 custom-height-${item.noOfRows} border border-x-slate-300 bg-white w-20 relative`} key={i}>
             {item.forecastInfo.map((data) => {
                 if (dataCell.week === data.startWeek) {
                     return <DataCellLabel option={data} row={data.$row} />
@@ -24,7 +24,7 @@ const renderCellStatusLabel = (isStatusBar, item, dataCell, i) => {
                 return <></>
             })}
         </td>}
-        {!isStatusBar && <td className={`py-2 custom-height-${item.noOfRows} border border-x-slate-300 bg-white w-24 relative`} key={i}></td>}
+        {!isStatusBar && <td className={`py-2 custom-height-${item.noOfRows} border border-x-slate-300 bg-white w-20 relative`} key={i}></td>}
     </>
 }
 const TableBody = ({item}) => {
