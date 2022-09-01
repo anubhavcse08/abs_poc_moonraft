@@ -57,7 +57,6 @@ const App = () => {
   // let subset = [];
   // console.log("subsettttttttttttttttttttttttttttttttttttttt");
   // findSubsets(subset, [1, 2, 3], [], 0);
-  console.log("currentQuaterData", currentQuaterData)
   return (
     <div className="App">
       <TopHeader header={header}></TopHeader>
