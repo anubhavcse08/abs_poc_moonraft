@@ -41,6 +41,12 @@ p {
 .sm-line-height {
   line-height: 4px;
 }
+p {
+  margin-bottom: 0;
+}
+.sm-line-height {
+  line-height: 4px;
+}
 .spline-graph .highcharts-container {
   margin-top: -8px;
   width: 100px !important;
