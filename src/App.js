@@ -53,7 +53,7 @@ const App = () => {
           <div class="card-body py-3 px-4">
             <TimeButtonMenu />
 
-            <div className="card-graph-container item-flex-row gap-3">
+            <div className="card-graph-container item-flex-row gap-3 hide-scrollbars">
               <GraphCard options={options} isGrowth={true} />
               <GraphCard options={options} isGrowth={false} />
               <GraphCard options={options} isGrowth={true} />
@@ -67,7 +67,7 @@ const App = () => {
         <div class="card">
           <div class="card-header flex flex-wrap gap-y-2 gap-x-4 md:gap-0 items-center p-4 border-b border-slate-300 text-xs">
             <div className="inline-flex md:contents order-1 items-center gap-4">
-              <div className="relative border rounded p-1 md:py-2 md:px-4">
+              <div className="relative border-2  rounded p-1 md:py-2 md:px-4">
                 <i class="bi bi-calendar4 pr-2"></i>Q4,2022
               </div>
 
@@ -90,7 +90,7 @@ const App = () => {
                 </div>
                 <input
                   type="search"
-                  className="border rounded p-1 md:p-2 border-stone-300 focus:border-stone-400 w-full"
+                  className="border-2 rounded p-1 md:p-2 border-stone-300 focus:border-stone-400 w-full"
                   placeholder="Search"
                   required
                 ></input>
