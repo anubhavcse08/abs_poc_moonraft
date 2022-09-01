@@ -2,3 +2,8 @@ table {
   table-layout: fixed;
   width: 100%;
 }
+
+
+table td:nth-child(2) ,table td:last-child , table th:nth-child(2) ,table th:last-child{
+  background-color: rgb(249 250 251);
+}
