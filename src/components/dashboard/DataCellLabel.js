@@ -1,7 +1,7 @@
 import React from 'react';
 
 const getStatusColor = (status) => {
-  let bgColor = '', borderColor = '', textStatusColor = 'sky-700';
+  let bgColor = '', borderColor = '', textStatusColor = 'default-status';
   switch (status) {
     case "Approved":
       bgColor = 'bg-emerald-200';
