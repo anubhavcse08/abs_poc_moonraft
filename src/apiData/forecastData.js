@@ -93,91 +93,91 @@ export const foreCastInfo = [
     {
         week: "01/03/23",
         weekNumber: 53,
-        quarter: "Q4, 2022",
+        quarter: "Q1, 2023",
         target: "$800.87",
         targetType: "Good"
     },
     {
         week: "01/10/23",
         weekNumber: 54,
-        quarter: "Q4, 2022",
+        quarter: "Q1, 2023",
         target: "$801.87",
         targetType: "Good"
     },
     {
         week: "01/17/23",
         weekNumber: 55,
-        quarter: "Q4, 2022",
+        quarter: "Q1, 2023",
         target: "$510.87",
         targetType: "Average"
     },
     {
         week: "01/24/23",
         weekNumber: 56,
-        quarter: "Q4, 2022",
+        quarter: "Q1, 2023",
         target: "$220.87",
         targetType: "Low"
     }, 
     {
         week: "01/31/23",
         weekNumber: 57,
-        quarter: "Q4, 2022",
+        quarter: "Q1, 2023",
         target: "$802.87",
         targetType: "Good"
     },
     {
         week: "02/07/23",
         weekNumber: 58,
-        quarter: "Q4, 2022",
+        quarter: "Q1, 2023",
         target: "$200.87",
         targetType: "Low"
     },
     {
         week: "02/14/23",
         weekNumber: 58,
-        quarter: "Q4, 2022",
+        quarter: "Q1, 2023",
         target: "$500.87",
         targetType: "Average"
     },
     {
         week: "02/21/23",
         weekNumber: 59,
-        quarter: "Q4, 2022",
+        quarter: "Q1, 2023",
         target: "$500.87",
         targetType: "Average"
     },
     {
         week: "02/28/23",
         weekNumber: 60,
-        quarter: "Q4, 2022",
+        quarter: "Q1, 2023",
         target: "$800.87",
         targetType: "Good"
     },
     {
         week: "03/05/23",
         weekNumber: 61,
-        quarter: "Q4, 2022",
+        quarter: "Q1, 2023",
         target: "$507.87",
         targetType: "Average"
     },
     {
         week: "03/12/23",
         weekNumber: 62,
-        quarter: "Q4, 2022",
+        quarter: "Q1, 2023",
         target: "$201.87",
         targetType: "Low"
     },
     {
         week: "03/19/23",
         weekNumber: 63,
-        quarter: "Q4, 2022",
+        quarter: "Q1, 2023",
         target: "$502.87",
         targetType: "Average"
     },
     {
         week: "03/26/23",
         weekNumber: 64,
-        quarter: "Q4, 2022",
+        quarter: "Q1, 2023",
         target: "$802.87",
         targetType: "Good"
     },

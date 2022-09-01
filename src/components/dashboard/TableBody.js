@@ -3,18 +3,19 @@ import { foreCastInfo } from '../../apiData/forecastData';
 import DataCellLabel from './DataCellLabel';
 
 const getColspanCell = (forecastInfo, dataCell) => {
-    let week = 0, isStatusBar = false;
+    let isStatusBar = false;
     for (let i = 0; i < forecastInfo.length; i++) {
         const element = forecastInfo[i];
         if (dataCell.week === element.startWeek) {
-            week = element.weeks;
             isStatusBar = true;
             break;
         }
     }
-    return { week, isStatusBar };
+    console.log('IIIIIIIIIIIISSSSSSSSss', isStatusBar)
+    return { isStatusBar };
 }
 const renderCellStatusLabel = (isStatusBar, item, dataCell, i) => {
+    console.log(isStatusBar, ' ------- ', dataCell.week);
     return <>
         {isStatusBar && <td className={`py-2 custom-height-${item.noOfRows} border border-x-slate-300 bg-white w-20 relative`} key={i}>
             {item.forecastInfo.map((data) => {
@@ -27,10 +28,10 @@ const renderCellStatusLabel = (isStatusBar, item, dataCell, i) => {
         {!isStatusBar && <td className={`py-2 custom-height-${item.noOfRows} border border-x-slate-300 bg-white w-20 relative`} key={i}></td>}
     </>
 }
-const TableBody = ({item}) => {
-    const [foreCastDetails, setForeCastDetails] = useState(foreCastInfo);
-
-    return foreCastDetails.map((element, i) => {
+const TableBody = ({item, currentPeriod}) => {
+    const currentQuarterData = foreCastInfo.filter(data => data.quarter === currentPeriod);
+    return currentQuarterData.map((element, i) => {
+        // console.log('IIIIIIIIIIIIIII', element)
         const { isStatusBar } = getColspanCell(item.forecastInfo, element);
         return renderCellStatusLabel(isStatusBar, item, element, i);
     });

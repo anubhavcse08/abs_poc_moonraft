@@ -17,12 +17,6 @@ const App = () => {
   const [currentQuater, setCurrentQuater] = useState('This Quarter');
   const [currentQuaterData, setCurrentQuaterData] = useState([]);
 
-  const options = {
-    title: "FORECAST",
-    actualAmount: "$20.5M",
-    tagetAmount: "$19.5M",
-    growthPercent: "3.5%",
-  };
   const onSelectStatus = (event) => {
     setselectStatus(event.target.value);
   }
@@ -138,7 +132,11 @@ const App = () => {
           </div>
           <div class="card-body py-3 px-4">
             <TitleForecastStatus resultShow={resultShow} />
-            <TableDesc selectStatus={selectStatus} onShowResult={onShowResult} />
+            <TableDesc
+              selectStatus={selectStatus}
+              onShowResult={onShowResult}
+              currentPeriod={currentQuaterData.period}
+            />
             <div className="flex justify-center">
               <button className="px-3 py-1.5 text-sky-600 mx-auto rounded border md:border-2 border-sky-600 md:rounded-md text-xs">
                 Load More
