@@ -39,7 +39,7 @@ const DataCellLabel = (props) => {
       <p className={`status-zone-label m-0.5 p-px font-medium text-white bg-${textStatusColor} rounded-sm`}>4A</p>
       <p className='status-amount-label m-0.5 p-px font-medium'>{Forecast}</p>
     </div>
-  )
-}
+  );
+};
 
-export default DataCellLabel
+export default DataCellLabel;

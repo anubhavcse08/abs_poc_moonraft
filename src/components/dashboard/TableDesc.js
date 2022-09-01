@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { foreCastInfo, weekWiseData } from '../../apiData/forecastData';
-import DataCellLabel from './DataCellLabel';
+import React, { Component, Fragment } from "react";
+import { foreCastInfo, weekWiseData } from "../../apiData/forecastData";
+import DataCellLabel from "./DataCellLabel";
 
 class TableDesc extends Component {
     constructor(props) {
