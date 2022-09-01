@@ -8,10 +8,10 @@ const getForecastStatus = (targetType) => {
             bgColor = "bg-sky-600";
             break;
         case "Average":
-            bgColor = "bg-sky-300";
+            bgColor = "bg-sky-400";
             break;
         case "Low":
-            bgColor = "bg-sky-100";
+            bgColor = "bg-sky-200";
             break;
         default:
             break;
@@ -20,10 +20,10 @@ const getForecastStatus = (targetType) => {
 }
 const TableHeader = ({headerTitle}) => {
     const [foreCastDetails, setForeCastDetails] = useState(foreCastInfo);
-    return <tr>
-        <th className='py-2 border border-slate-300 bg-white font-semibold w-96 px-2 text-left'>{headerTitle}</th>
+    return <tr className={`${headerTitle === 'Weeks' ? 'bg-white': 'bg-sky-50'}`}>
+        <th className={`py-2 border border-slate-300 font-semibold w-96 px-2 text-left`}>{headerTitle}</th>
         {foreCastDetails.map((item, index) => {
-            return <th key={index} className={`${headerTitle === 'Weeks' ? 'py-1' : 'py-3'} border border-slate-300 bg-white font-semibold text-center w-24`}>
+            return <th key={index} className={`${headerTitle === 'Weeks' ? 'py-1' : 'py-3'} border border-slate-300 font-semibold text-center w-24`}>
                 {headerTitle === 'Weeks' ?
                     <><p className="whitespace-no-wrap text-gray-500 text-xs text-custom-small">{item.week}</p>
                         <p className='whitespace-no-wrap text-gray-600 text-xs'>{item.weekNumber}</p></> : <>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import TableDesc from "./components/dashboard/TableDesc";
 import TopHeader from "./components/TopHeader/TopHeader";
@@ -10,12 +10,18 @@ import { header } from "./apiData/header";
 import TitleForecastStatus from "./components/dashboard/TitleForecastStatus";
 
 const App = () => {
+
+  const [selectStatus, setselectStatus] = useState('Status');
   const options = {
     title: "FORECAST",
     actualAmount: "$20.5M",
     tagetAmount: "$19.5M",
     growthPercent: "3.5%",
   };
+  const onSelectStatus = (event) => {
+    // console.log("EEEEEEEEEEE", event.target.value);
+    setselectStatus(event.target.value);
+  }
   // function findSubsets(subset, nums, output, index) {
   //   console.log(output, 'BBBBBBBBBB ', index)
   //   // Base Condition
@@ -95,12 +101,13 @@ const App = () => {
               </div>
               <div class="filterby mt-1 ml-4 md:ml-auto order-5">
                 <label>Filter by:</label>
-                <select class="font-medium ml-1 pr-1">
-                  <option value="1" selected>
-                    Status
-                  </option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
+                <select class="font-medium ml-1 pr-1" onChange={onSelectStatus}>
+                  <option value="Status" selected>Status</option>
+                  <option value="Accepted">Accepted</option>
+                  <option value="Draft">Draft</option>
+                  <option value="Planning">Planning</option>
+                  <option value="Executed">Executed</option>
+                  <option value="Pending">Pending</option>
                 </select>
               </div>
             </div>
@@ -115,7 +122,7 @@ const App = () => {
           </div>
           <div class="card-body py-3 px-4">
             <TitleForecastStatus />
-            <TableDesc />
+            <TableDesc selectStatus={selectStatus} />
             <div className="flex flex-row justify-center">
               <button className="py-1.5 px-3.5 font-medium text-sky-700 border-2 border-sky-700 rounded-lg">Load More</button>
             </div>

@@ -3,9 +3,9 @@ import { weekWiseData } from "../../apiData/forecastData";
 import TableBody from "./TableBody";
 import TableHeader from "./TableHeader";
 
-const TableDesc = () => {
+const TableDesc = (props) => {
     const [weekWiseDetails, setWeekWiseDetails] = useState(weekWiseData);
-
+    const { selectStatus } = props;
     const renderTableHeader = () => {
         return (
             <>
@@ -17,7 +17,7 @@ const TableDesc = () => {
 
     const renderTableData = () => {
         return weekWiseDetails.data.map((item, index) => {
-            return <tr key={index} className="border-dotted border-t-2 border-y-slate-300">
+            return <tr key={index} className="border-dotted border-b-2 border-y-slate-300">
                 <td className='py-2 border border-x-slate-300 bg-white font-semibold w-96 px-2'>
                     <div className='flex flex-row items-baseline'>
                         <input type="checkbox" class="checked:bg-blue-500 cursor-pointer" />
