@@ -15,9 +15,13 @@ const TopHeader = (prop) => {
       const searchBox = document.getElementById("global-search-box");
       searchBox.classList.remove("fade-in");
       searchBox.classList.add("fade-out");
-      searchBox?.classList.add("hidden");
-      // searchBox.addEventListener("animationend", () => {
-      // },1);
+      searchBox.addEventListener(
+        "animationend",
+        () => {
+          searchBox?.classList.add("hidden");
+        },
+        { once: true }
+      );
     });
   });
 
