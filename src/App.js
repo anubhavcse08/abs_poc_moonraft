@@ -8,6 +8,7 @@ import SplineChart from "./components/SplineChart";
 import Header from "./components/header/header";
 import Form from "./components/Form/form";
 import { header } from "./apiData/header";
+import TitleForecastStatus from "./components/dashboard/TitleForecastStatus";
 
 class App extends Component {
   constructor(props) {
@@ -123,7 +124,11 @@ class App extends Component {
               </div>
             </div>
             <div class="card-body py-3 px-4">
-              <TableDesc></TableDesc>
+              <TitleForecastStatus />
+              <TableDesc />
+              <div className="flex flex-row justify-center">
+                <button className="py-1.5 px-3.5 font-medium text-sky-700 border-2 border-sky-700 rounded-lg">Load More</button>
+              </div>
               {/* <Bar options={chartOptions} data={data} /> */}
             </div>
           </div>
