@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { weekWiseData } from "../../apiData/forecastData";
 import TableBody from "./TableBody";
 import TableHeader from "./TableHeader";
+import "./TableDesc.css";
 
 const TableDesc = (props) => {
     const { selectStatus, onShowResult } = props;
@@ -25,14 +26,6 @@ const TableDesc = (props) => {
         onShowResult(filterData.length);
         return filterData;
     }
-    const renderTableHeader = () => {
-        return (
-            <>
-                <TableHeader headerTitle='Weeks' />
-                <TableHeader headerTitle='Forecast' />
-            </>
-        )
-    }
 
     const renderTableData = () => {
         const selectedData = selectedStatusData();
@@ -48,25 +41,32 @@ const TableDesc = (props) => {
             </tr>
         });
     }
+    
 
+
+  const renderTableHeader = () => {
     return (
-        <React.Fragment>
-            <div className="container mx-auto px-4">
-                <div className="-mx-4 py-3 overflow-x-auto">
-                    <div className="inline-block min-w-full shadow-md overflow-hidden">
-                        <table className="min-w-full leading-normal border-collapse border border-slate-400">
-                            <thead>
-                                {renderTableHeader()}
-                            </thead>
-                            <tbody>
-                                {renderTableData()}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </React.Fragment>
-    )
-}
+      <>
+        <TableHeader headerTitle="Weeks" />
+        <TableHeader headerTitle="Forecast" />
+      </>
+    );
+  };
+
+  return (
+    <React.Fragment>
+      <div className="container mx-auto px-4">
+        <div className="-mx-4 py-3 overflow-x-auto hide-scrollbars">
+          <div className="inline-block min-w-full shadow-md overflow-hidden">
+            <table className="min-w-full leading-normal border-collapse border border-slate-400">
+              <thead>{renderTableHeader()}</thead>
+              <tbody>{renderTableData()}</tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </React.Fragment>
+  );
+};
 
 export default TableDesc;
