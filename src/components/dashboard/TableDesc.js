@@ -1,81 +1,18 @@
 import React, { useState } from "react";
-import { foreCastInfo, weekWiseData } from "../../apiData/forecastData";
-import DataCellLabel from "./DataCellLabel";
+import { weekWiseData } from "../../apiData/forecastData";
+import TableBody from "./TableBody";
+import TableHeader from "./TableHeader";
 
 const TableDesc = () => {
-
-    const [foreCastDetails, setForeCastDetails] = useState(foreCastInfo);
     const [weekWiseDetails, setWeekWiseDetails] = useState(weekWiseData);
 
-    const getForecastStatus = (targetType) => {
-        let bgColor = 'bg-sky-600';
-        switch (targetType) {
-            case "Good":
-                bgColor = "bg-sky-600";
-                break;
-            case "Average":
-                bgColor = "bg-sky-300";
-                break;
-            case "Low":
-                bgColor = "bg-sky-100";
-                break;
-            default:
-                break;
-        }
-        return bgColor;
-    }
-    const renderTableHeaderCell = (headerTitle) => {
-        return <tr>
-            <th className='py-2 border border-slate-300 bg-white font-semibold w-96 px-2 text-left'>{headerTitle}</th>
-            {foreCastDetails.map((item, index) => {
-                return <th key={index} className={`${headerTitle === 'Weeks' ? 'py-1' : 'py-3'} border border-slate-300 bg-white font-semibold text-center w-24`}>
-                    {headerTitle === 'Weeks' ?
-                        <><p className="whitespace-no-wrap text-gray-500 text-xs text-custom-small">{item.week}</p>
-                            <p className='whitespace-no-wrap text-gray-600 text-xs'>{item.weekNumber}</p></> : <>
-                            <p className='whitespace-no-wrap text-gray-600 text-xs'>{item.target}</p>
-                            <p className={`${getForecastStatus(item.targetType)} py-3 w-full`}></p>
-                        </>}
-                </th>
-            })}
-        </tr>
-    }
     const renderTableHeader = () => {
         return (
             <>
-                {renderTableHeaderCell('Weeks')}
-                {renderTableHeaderCell('Forecast')}
+                <TableHeader headerTitle='Weeks' />
+                <TableHeader headerTitle='Forecast' />
             </>
         )
-    }
-    const getColspanCell = (forecastInfo, dataCell) => {
-        let week = 0, isStatusBar = false;
-        for (let i = 0; i < forecastInfo.length; i++) {
-            const element = forecastInfo[i];
-            if (dataCell.week === element.startWeek) {
-                week = element.weeks;
-                isStatusBar = true;
-                break;
-            }
-        }
-        return { week, isStatusBar };
-    }
-    const renderCellStatusLabel = (isStatusBar, item, dataCell, i) => {
-        return <>
-            {isStatusBar && <td className={`py-2 custom-height-${item.noOfRows} border border-x-slate-300 bg-white w-24 relative`} key={i}>
-                {item.forecastInfo.map((data) => {
-                    if (dataCell.week === data.startWeek) {
-                        return <DataCellLabel option={data} row={data.$row} />
-                    }
-                })}
-            </td>}
-            {!isStatusBar && <td className={`py-2 custom-height-${item.noOfRows} border border-x-slate-300 bg-white w-24 relative`} key={i}></td>}
-        </>
-    }
-    const renderElement = (item) => {
-        return foreCastDetails.map((element, i) => {
-            const { isStatusBar } = getColspanCell(item.forecastInfo, element);
-            return renderCellStatusLabel(isStatusBar, item, element, i);
-        });
     }
 
     const renderTableData = () => {
@@ -87,7 +24,7 @@ const TableDesc = () => {
                         <p className='whitespace-no-wrap text-gray-900 text-sm ml-1'>{item.Title}</p>
                     </div>
                 </td>
-                {renderElement(item)}
+                <TableBody item={item} />
             </tr>
         });
     }
