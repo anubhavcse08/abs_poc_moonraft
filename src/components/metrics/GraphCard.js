@@ -15,9 +15,9 @@ const GraphCard = (props) => {
   // }, []);
 
   return (
-    <div className="card-layout flex-1">
-      <div className="card-title item-flex-row">
-        <div className="title">{title}</div>
+    <div className="card-layout w-60 shrink-0 px-2 py-1">
+      <div className="card-title item-flex-row items-center">
+        <div className="title font-semibold text-xs">{title}</div>
         <div
           className={`growth-amount ${isGrowth ? "growth-up" : "growth-down"}`}
         >
@@ -31,7 +31,7 @@ const GraphCard = (props) => {
       </div>
       <div className="graph-amount-label item-flex-row">
         <div className="amount-details item-flex-column">
-          <div className="actual-amount">{actualAmount}</div>
+          <div className="actual-amount text-xl font-bold">{actualAmount}</div>
           <div className="target-amount">
             {tagetAmount} <span className="target-label">Target</span>
           </div>
