@@ -126,7 +126,7 @@ class App extends Component {
               <div className="text-sm font-semibold">
                 <i class="bi bi-chevron-contract mr-2"></i>Metrics
               </div>
-              <button class="button-more text-sky-600 text-sm">More</button>
+              <button class="button-more text-sky-600 text-xs md:text-sm">More</button>
             </div>
             <div class="card-body py-3 px-4">
               <TimeButtonMenu />
@@ -145,46 +145,48 @@ class App extends Component {
         {/* <SplineChart  isGrowth={true} /> */}
         <section>
           <div class="card">
-            <div class="card-header flex flex-wrap items-center p-4 border-b border-slate-300 text-xs">
-              <div className="relative border rounded py-2 px-4">
-                <i class="bi bi-calendar4 pr-2"></i>Q4,2022
-              </div>
-              <div className="border w-px mx-4 py-4 hidden md:block"></div>
-              <div className="search-box-2 relative hidden md:block">
-                <div class="flex absolute inset-y-0 right-4 items-center pl-3 pointer-events-none text-slate-400">
-                  <i class="bi bi-search"></i>
+            <div class="card-header flex flex-wrap gap-y-2 gap-x-4 md:gap-0 items-center p-4 border-b border-slate-300 text-xs">
+              <div className="inline-flex md:contents order-1 items-center gap-4">
+                <div className="relative border rounded p-1 md:py-2 md:px-4">
+                  <i class="bi bi-calendar4 pr-2"></i>Q4,2022
                 </div>
-                <input
-                  type="search"
-                  className="border rounded p-2 border-stone-300 focus:border-stone-400 w-full"
-                  placeholder="Search"
-                  required
-                ></input>
+
+                <div className="border w-px mx-4 py-4 hidden md:block order-3"></div>
+                <div className="forecast md:ml-0 order-4">
+                  <span>
+                    Forecast: <span className="font-medium">$8,081.00</span>
+                  </span>
+                  <span className="text-red-500 ml-2 font-semibold">
+                    <i class="bi bi-arrow-down"></i>
+                    <span id="growth-perc">3.1</span>%
+                  </span>
+                </div>
               </div>
-              <div className="border w-px mx-4 py-4 hidden md:block"></div>
-              <div className="forecast ml-auto md:ml-0">
-                <span>
-                  Forecast: <span className="font-medium">$8,081.00</span>
-                </span>
-                <span className="text-red-500 ml-2 font-semibold">
-                  <i class="bi bi-arrow-down"></i>
-                  <span id="growth-perc">3.1</span>%
-                </span>
+              <div className="inline-flex items-center md:contents">
+                <div className="border w-px mx-4 py-4 hidden md:block order-1"></div>
+                <div className="search-box-2 md:ml-0 w-40 md:w-0 relative order-2 ">
+                  <div class="flex absolute inset-y-0 right-2 md:right-4 items-center pl-3 pointer-events-none text-slate-400">
+                    <i class="bi bi-search"></i>
+                  </div>
+                  <input
+                    type="search"
+                    className="border rounded p-1 md:p-2 border-stone-300 focus:border-stone-400 w-full"
+                    placeholder="Search"
+                    required
+                  ></input>
+                </div>
+                <div class="filterby mt-1 ml-4 md:ml-auto order-5">
+                  <label>Filter by:</label>
+                  <select class="font-medium ml-1 pr-1">
+                    <option value="1" selected>
+                      Status
+                    </option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
               </div>
-              <div class="filterby mt-1 md:ml-auto">
-                <label>Filter by:</label>
-                <select class="font-medium ml-1 pr-1">
-                  <option value="1" selected>
-                    Status
-                  </option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select>
-              </div>
-              <div class="icons flex items-center gap-3 md:gap-4 ml-auto md:ml-4 text-xs md:text-base">
-                <span className="icon">
-                  <i class="bi bi-search"></i>
-                </span>
+              <div class="icons items-center gap-3 md:gap-4 ml-auto md:ml-4 text-xs md:text-base hidden md:flex order-6">
                 <span className="icon">
                   <i class="bi bi-calendar4"></i>
                 </span>
@@ -194,7 +196,7 @@ class App extends Component {
               </div>
             </div>
             <div class="card-body py-3 px-4">
-              <TableDesc></TableDesc>
+              {/* <TableDesc></TableDesc> */}
               {/* <Bar options={chartOptions} data={data} /> */}
             </div>
           </div>

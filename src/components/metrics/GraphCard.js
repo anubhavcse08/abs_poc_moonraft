@@ -15,7 +15,7 @@ const GraphCard = (props) => {
   // }, []);
 
   return (
-    <div className="card-layout flex-1">
+    <div className="card-layout w-52 shrink-0 md:w-60">
       <div className="card-title item-flex-row">
         <div className="title">{title}</div>
         <div

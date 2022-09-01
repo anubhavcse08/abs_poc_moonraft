@@ -2,7 +2,7 @@ import "./header.css";
 
 const Header = () => {
   return (
-    <header className="app-header flex items-start md:items-center px-3 py-2 md:px-5 md:pt-3 md:pb-4 border-t-2 border-b">
+    <header className="app-header flex items-start md:items-center px-5 py-2 md:px-5 md:pt-3 md:pb-4 border-t-2 border-b">
       <div className="flex flex-col">
         <a href="/worklist" className="text-sky-600 text-xss font-bold">
           <i class="bi bi-arrow-left pr-1"></i>

@@ -1,6 +1,6 @@
 .tabs li {
   border-bottom: 1px solid var(--border);
-  padding: 0.5rem 0.7rem;
+  padding: 0.5rem 0.675rem;
 }
 
 .tabs li:first-child {
