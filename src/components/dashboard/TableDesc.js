@@ -69,6 +69,7 @@ class TableDesc extends Component {
                     if (dataCell.week === data.startWeek) {
                         return <DataCellLabel option={data} row={data.$row} />
                     }
+                    return <></>
                 })}
             </td>}
             {!isStatusBar && <td className={`py-2 custom-height-${item.noOfRows} border border-slate-300 bg-white w-24 relative`} key={i}></td>}
