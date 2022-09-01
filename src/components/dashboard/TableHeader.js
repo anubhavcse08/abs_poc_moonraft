@@ -19,7 +19,7 @@ const getForecastStatus = (targetType) => {
     return bgColor;
 }
 const TableHeader = ({ headerTitle }) => {
-    const [foreCastDetails, setForeCastDetails] = useState(foreCastInfo);
+    const [foreCastDetails] = useState(foreCastInfo);
     return <tr className={`${headerTitle === 'Weeks' ? 'bg-white' : 'bg-sky-50'}`}>
         <th className='py-2 border border-slate-300 font-semibold w-60 px-2 text-left text-xs'>{headerTitle}</th>
         {foreCastDetails.map((item, index) => {

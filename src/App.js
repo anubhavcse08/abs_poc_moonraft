@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import TableDesc from "./components/dashboard/TableDesc";
 import TopHeader from "./components/TopHeader/TopHeader";
@@ -7,11 +7,16 @@ import TimeButtonMenu from "./components/metrics/TimeButtonMenu";
 import Header from "./components/header/header";
 import Form from "./components/Form/form";
 import { header } from "./apiData/header";
+import { pageData } from "./apiData/metrics";
 import TitleForecastStatus from "./components/dashboard/TitleForecastStatus";
 
 const App = () => {
 
   const [selectStatus, setselectStatus] = useState('Status');
+  const [resultShow, setResultShow] = useState(0);
+  const [currentQuater, setCurrentQuater] = useState('This Quarter');
+  const [currentQuaterData, setCurrentQuaterData] = useState([]);
+
   const options = {
     title: "FORECAST",
     actualAmount: "$20.5M",
@@ -19,8 +24,20 @@ const App = () => {
     growthPercent: "3.5%",
   };
   const onSelectStatus = (event) => {
-    // console.log("EEEEEEEEEEE", event.target.value);
     setselectStatus(event.target.value);
+  }
+  const onShowResult = (numberOfData) => {
+    setResultShow(numberOfData);
+  }
+  useEffect(() => {
+    const currentQuaterDataValue = pageData.metricDetails.find(data => data.quarter === currentQuater);
+    setCurrentQuaterData(currentQuaterDataValue);
+  }, [currentQuater]);
+
+  const getCurrentQuater = (currentQuaterValue) => {
+    setCurrentQuater(currentQuaterValue);
+    // const currentQuaterDataValue = pageData.metricDetails.find(data => data.quarter === currentQuaterValue);
+    // setCurrentQuaterData(currentQuaterDataValue);
   }
   // function findSubsets(subset, nums, output, index) {
   //   console.log(output, 'BBBBBBBBBB ', index)
@@ -40,7 +57,7 @@ const App = () => {
   // let subset = [];
   // console.log("subsettttttttttttttttttttttttttttttttttttttt");
   // findSubsets(subset, [1, 2, 3], [], 0);
-
+  console.log("currentQuaterData", currentQuaterData)
   return (
     <div className="App">
       <TopHeader header={header}></TopHeader>
@@ -57,14 +74,11 @@ const App = () => {
             </button>
           </div>
           <div class="card-body py-3 px-4">
-            <TimeButtonMenu />
-
+            <TimeButtonMenu getCurrentQuater={getCurrentQuater} />
             <div className="card-graph-container item-flex-row gap-3">
-              <GraphCard options={options} isGrowth={true} />
-              <GraphCard options={options} isGrowth={false} />
-              <GraphCard options={options} isGrowth={true} />
-              <GraphCard options={options} isGrowth={true} />
-              <GraphCard options={options} isGrowth={false} />
+              {currentQuaterData && currentQuaterData.metrics && currentQuaterData.metrics.map(data => {
+                return <GraphCard options={data} isGrowth={data.isTrendPositive} />
+              })}
             </div>
           </div>
         </div>
@@ -74,7 +88,7 @@ const App = () => {
           <div class="card-header flex flex-wrap gap-y-2 gap-x-4 md:gap-0 items-center p-4 border-b border-slate-300 text-xs">
             <div className="inline-flex md:contents order-1 items-center gap-4">
               <div className="relative border rounded p-1 md:py-2 md:px-4">
-                <i class="bi bi-calendar4 pr-2"></i>Q4,2022
+                <i class="bi bi-calendar4 pr-2"></i>{currentQuaterData.period}
               </div>
 
               <div className="border w-px mx-4 py-4 hidden md:block order-3"></div>
@@ -105,7 +119,7 @@ const App = () => {
                 <label className="text-gray-500">Filter by:</label>
                 <select class="font-medium ml-1 pr-1" onChange={onSelectStatus}>
                   <option value="Status" selected>Status</option>
-                  <option value="Accepted">Accepted</option>
+                  <option value="Approved">Approved</option>
                   <option value="Draft">Draft</option>
                   <option value="Planning">Planning</option>
                   <option value="Executed">Executed</option>
@@ -123,10 +137,10 @@ const App = () => {
             </div>
           </div>
           <div class="card-body py-3 px-4">
-            <TitleForecastStatus />
-            <TableDesc selectStatus={selectStatus} />
+            <TitleForecastStatus resultShow={resultShow} />
+            <TableDesc selectStatus={selectStatus} onShowResult={onShowResult} />
             <div className="flex justify-center">
-              <button className="px-1 py-0.5 text-sky-600 mx-auto rounded border md:border-2 border-sky-600 md:rounded-md text-xs">
+              <button className="px-3 py-1.5 text-sky-600 mx-auto rounded border md:border-2 border-sky-600 md:rounded-md text-xs">
                 Load More
               </button>
             </div>

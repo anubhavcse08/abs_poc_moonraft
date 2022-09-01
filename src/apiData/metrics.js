@@ -46,7 +46,7 @@ export const pageData = {
                 name: "FORECAST",
                 currentValue: "$30.5M",
                 targetValue: "$29.5M",
-                isTrendPositive: true,
+                isTrendPositive: false,
                 percentChange: "2.5%"
             },
             {
@@ -67,14 +67,14 @@ export const pageData = {
                 name: "INVENTORY (week of 3/5)",
                 currentValue: "453K",
                 targetValue: "323K",
-                isTrendPositive: true,
+                isTrendPositive: false,
                 percentChange: "1.0%"
             },
             {
                 name: "POSITIONING",
                 currentValue: "$3.1M",
                 targetValue: "$4.7M",
-                isTrendPositive: false,
+                isTrendPositive: true,
                 percentChange: "5.2%"
             }
         ]

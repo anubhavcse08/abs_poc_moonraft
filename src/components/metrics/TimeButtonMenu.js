@@ -6,6 +6,7 @@ const tabs = ["This Quarter", "Next Quarter", "YTD", "1 Year"];
 const TimeButtonMenu = (props) => {
   const [checked, setChecked] = useState(tabs[0]);
   const getChecked = (e) => {
+    props.getCurrentQuater(e.target.innerText);
     setChecked(e.target.innerText);
   };
   return (
@@ -13,7 +14,7 @@ const TimeButtonMenu = (props) => {
       <ul className="flex items-stretch text-xs font-medium">
         {tabs.map((tab, i) => (
           <li
-            className={"tab " + (checked == tab ? "is-active" : "")}
+            className={"cursor-pointer tab " + (checked === tab ? "is-active" : "")}
             onClick={getChecked}
           >
             {tab}

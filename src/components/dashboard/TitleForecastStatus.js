@@ -1,16 +1,16 @@
 import React from "react";
 import { weekWiseData } from "../../apiData/forecastData";
 
-const TitleForecastStatus = () => {
+const TitleForecastStatus = ({resultShow}) => {
   const forecastStatus = [
     { title: "Good", bgColor: "bg-sky-600" },
     { title: "Average", bgColor: "bg-sky-400" },
-    { title: "Low", bgColor: "bg-sky-200" },
+    { title: "Low", bgColor: "bg-sky-200" }
   ];
   return (
     <div className="flex flex-row justify-between item-center">
       <div className="text-xss">
-        Showing <span className="font-semibold">22</span> of{" "}
+        Showing <span className="font-semibold">{resultShow}</span> of{" "}
         <span className="font-semibold">{weekWiseData.data.length}</span>
       </div>
       <div className="flex flex-row text-xs gap-3 md:gap-4">
