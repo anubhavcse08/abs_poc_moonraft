@@ -35,6 +35,12 @@ h6 {
   margin: 0 auto;
   background-color: white;
 }
+p {
+  margin-bottom: 0;
+}
+.sm-line-height {
+  line-height: 4px;
+}
 .spline-graph .highcharts-container {
   margin-top: -8px;
   width: 100px !important;
@@ -67,18 +73,13 @@ h6 {
 .card-layout {
   border: 1px solid #ddd;
   border-radius: 5px;
-  padding: 5px 5px 0 5px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 .card-title,
 .graph-amount-label {
   justify-content: space-between;
-  align-items: center;
 }
-.card-title .title {
-  font-size: 12px;
-  font-weight: 500;
-}
+
 .card-title .growth-amount {
   font-size: 13px;
   font-weight: 500;
@@ -90,7 +91,7 @@ h6 {
   color: green;
 }
 .target-amount {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
 }
 .target-amount .target-label {
@@ -100,9 +101,6 @@ h6 {
   align-items: flex-start;
 }
 .amount-details,
-.actual-amount {
-  font-weight: 700;
-}
 .arrow-up,
 .arrow-down {
   font-size: 14px;
@@ -128,7 +126,7 @@ h6 {
 }
 
 .text-custom-small {
-  font-size: 0.65rem;
+  font-size: 0.55rem;
 }
 
 section {
@@ -145,49 +143,57 @@ section {
 .button-more {
   margin-left: auto;
 }
-.cell-width-1 {
-  max-width: 7%;
+
+
+.cell-width-1 { width: 4.2rem; }
+.cell-width-2 { width: 8.5rem; }
+.cell-width-3 { width: 12.9rem; }
+.cell-width-4 { width: 17.2rem; }
+.cell-width-5 { width: 21.6rem; }
+.cell-width-6 { width: 25.9rem; }
+.cell-width-7 { width: 30.5rem; }
+.cell-width-8 { width: 35.5rem; }
+.cell-width-9 { width: 39.1rem; }
+.cell-width-10 { width: 43.7rem; }
+.cell-width-11 { width: 48.1rem; }
+.cell-width-12 { width: 52.5rem; }
+.cell-width-13 { width: 56.5rem; }
+
+.status-zone-label {
+  font-size: 0.42rem;
 }
-.cell-width-2 {
-  max-width: 14%;
+.custom-height-0, .custom-height-1 {
+  height: 3rem;
 }
-.cell-width-3 {
-  max-width: 21%;
+.custom-height-2 {
+  height: 5.4rem;
 }
-.cell-width-4 {
-  max-width: 28%;
+.custom-height-3 {
+  height: 8rem;
 }
-.cell-width-5 {
-  max-width: 35%;
+.top-cell-2 {
+  top: 2.9rem;
 }
-.cell-width-6 {
-  max-width: 42%;
+.top-cell-3 {
+  top: 5.4rem;
 }
-.cell-width-7 {
-  max-width: 49%;
+.code-icon {
+  font-size: 6px;
+  margin: 0px 3px 0 4px;
+  font-weight: 700;
 }
-.cell-width-8 {
-  max-width: 56%;
+.bg-status-planning-yellow {
+  background-color: rgb(133 77 14);
 }
-.cell-width-9 {
-  max-width: 63%;
+.text-status-planning-yellow {
+  color: rgb(161 98 7);
 }
-.cell-width-10 {
-  max-width: 70%;
-}
-.cell-width-11 {
-  max-width: 77%;
-}
-.cell-width-12 {
-  max-width: 84%;
-}
-.cell-width-13 {
-  max-width: 91%;
+.status-planning-border {
+  border-bottom: 1px solid rgb(20 184 166);
+  border-top: 1px solid rgb(20 184 166);
+  border-right: 1px solid rgb(20 184 166);
 }
 
-.data-cell-label {
-  height: 32px;
-}
 
 @media (min-width: 768px) {
   section {

@@ -23,7 +23,7 @@ const TopHeader = (prop) => {
           <span class="md:py-2 md:pr-4 md:border-r-2 md:border-dotted uppercase border-blue-200">
             {prop.header.type}
           </span>
-          <span class="mt-1 md:py-2 md:pl-4">{prop.header.address}</span>
+          <span class="mt-1 md:mt-0 md:py-2 md:pl-4">{prop.header.address}</span>
         </div>
         <div
           className="search-box md:relative text-xs md:w-3/12 hidden md:block"

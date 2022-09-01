@@ -1,5 +1,4 @@
 .tabs li {
-  border-bottom: 1px solid var(--border);
   padding: 0.5rem 0.675rem;
 }
 
@@ -14,11 +13,11 @@
 }
 
 .tabs li {
-  border: 1px solid var(--border);
+  border: 1.5px solid var(--border);
 }
 
 .tabs li + li {
-  margin-left: -1px;
+  margin-left: -1.5px;
 }
 
 .tabs ul {

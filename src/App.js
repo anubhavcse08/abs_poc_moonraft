@@ -122,16 +122,16 @@ class App extends Component {
         <Form></Form>
         <section>
           <div class="card">
-            <div class="card-header flex items-center p-4 border-b border-slate-300">
-              <div className="text-sm font-semibold">
-                <i class="bi bi-chevron-contract mr-2"></i>Metrics
+            <div class="card-header flex items-center p-4 border-b border-slate-300 font-semibold">
+              <div className="text-base ">
+                <i class="bi bi-chevron-contract mr-1"></i>Metrics
               </div>
-              <button class="button-more text-sky-600 text-xs md:text-sm">More</button>
+              <button class="button-more text-sky-600 text-xs md:text-sm ">More</button>
             </div>
             <div class="card-body py-3 px-4">
               <TimeButtonMenu />
 
-              <div className="card-graph-container item-flex-row gap-4">
+              <div className="card-graph-container item-flex-row gap-3">
                 <GraphCard options={options} isGrowth={true} />
                 <GraphCard options={options} isGrowth={false} />
                 <GraphCard options={options} isGrowth={true} />
@@ -196,7 +196,7 @@ class App extends Component {
               </div>
             </div>
             <div class="card-body py-3 px-4">
-              {/* <TableDesc></TableDesc> */}
+              <TableDesc></TableDesc>
               {/* <Bar options={chartOptions} data={data} /> */}
             </div>
           </div>
