@@ -190,6 +190,12 @@ section {
 .text-status-planning-yellow {
   color: rgb(161 98 7);
 }
+.bg-default-status {
+  background-color: rgb(3 105 161);
+}
+.text-default-status {
+  color: rgb(3 105 161);
+}
 .status-planning-border {
   border-bottom: 1px solid rgb(20 184 166);
   border-top: 1px solid rgb(20 184 166);
