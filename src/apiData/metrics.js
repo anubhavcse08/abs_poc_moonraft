@@ -53,14 +53,14 @@ export const pageData = {
                 name: "UNITS SOLD",
                 currentValue: "$19.1M",
                 targetValue: "$18.7M",
-                isTrendPositive: true,
+                isTrendPositive: false,
                 percentChange: "3.5%"
             },
             {
                 name: "MARGIN",
                 currentValue: "$0.15M",
                 targetValue: "$1.2M",
-                isTrendPositive: false,
+                isTrendPositive: true,
                 percentChange: "3.1%"
             },
             {
