@@ -12,14 +12,12 @@ const TableDesc = (props) => {
         let filterData = [];
         const currentQuarterDataValue = weekWiseData.data.filter(data => data.quarter === currentPeriod);
         currentQuarterDataValue && currentQuarterDataValue.map((item) => {
-            for (let i = 0; i < item.forecastInfo.length; i++) {
-                const data = item.forecastInfo[i];
+            item.forecastInfo.find(data => {
                 const status = data.status === "Pending with Vendor" ? "Pending" : data.status;
                 if (status === selectStatus) {
                     filterData.push(item);
-                    break;
                 }
-            }
+            });
         });
         if (selectStatus === 'All' && filterData.length === 0) {
             filterData = currentQuarterDataValue;
@@ -35,8 +33,8 @@ const TableDesc = (props) => {
     const renderTableHeader = () => {
         return (
             <>
-                <TableHeader headerTitle='Weeks' currentPeriod={currentPeriod}/>
-                <TableHeader headerTitle='Forecast' currentPeriod={currentPeriod}/>
+                <TableHeader headerTitle='Weeks' currentPeriod={currentPeriod} />
+                <TableHeader headerTitle='Forecast' currentPeriod={currentPeriod} />
             </>
         )
     }
@@ -55,20 +53,20 @@ const TableDesc = (props) => {
         });
     }
 
-  return (
-    <React.Fragment>
-      <div className="container mx-auto px-4">
-        <div className="-mx-4 py-3 overflow-x-auto hide-scrollbars">
-          <div className="inline-block min-w-full shadow-md overflow-hidden">
-            <table className="min-w-full leading-normal border-collapse border border-slate-400">
-              <thead>{renderTableHeader()}</thead>
-              <tbody>{renderTableData()}</tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </React.Fragment>
-  );
+    return (
+        <React.Fragment>
+            <div className="container mx-auto px-4">
+                <div className="-mx-4 py-3 overflow-x-auto hide-scrollbars">
+                    <div className="inline-block min-w-full shadow-md overflow-hidden">
+                        <table className="min-w-full leading-normal border-collapse border border-slate-400">
+                            <thead>{renderTableHeader()}</thead>
+                            <tbody>{renderTableData()}</tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </React.Fragment>
+    );
 };
 
 export default TableDesc;
