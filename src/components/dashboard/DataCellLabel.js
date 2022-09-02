@@ -30,7 +30,6 @@ const getStatusColor = (status) => {
   return { bgColor, borderColor, textStatusColor };
 }
 const DataCellLabel = (props) => {
-  console.log("PPPPPPPPPPPPPPPPPPPPProps", props)
   const { option: { Forecast, status, weeks }, row } = props;
   const { bgColor, borderColor, textStatusColor } = getStatusColor(status);
   return (

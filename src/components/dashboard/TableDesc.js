@@ -21,7 +21,7 @@ const TableDesc = (props) => {
                 }
             }
         });
-        if (selectStatus === 'Status' && filterData.length === 0) {
+        if (selectStatus === 'All' && filterData.length === 0) {
             filterData = currentQuarterDataValue;
         }
         onShowResult(filterData.length);
@@ -43,7 +43,7 @@ const TableDesc = (props) => {
 
     const renderTableData = () => {
         return currentQuarterTableData && currentQuarterTableData.map((item, index) => {
-            return <tr key={index} className="border-dotted border-t-2 border-y-slate-300">
+            return <tr key={index} className="border-dotted border-b-2 border-y-slate-300">
                 <td className='py-2 border border-x-slate-300 bg-white font-semibold w-60 px-2'>
                     <div className='flex flex-row items-center'>
                         <input type="checkbox" class="checked:bg-blue-500 cursor-pointer" />
