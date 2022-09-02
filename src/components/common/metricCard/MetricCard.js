@@ -1,5 +1,7 @@
 import React from "react";
 import SplineChart from "../splineChart/SplineChart";
+import growthPositiveImg from "../../../assets/growth-positive.png";
+import growthNegativeImg from "../../../assets/growth-nagative.png";
 
 const MetricCard = (props) => {
   const {
@@ -30,7 +32,14 @@ const MetricCard = (props) => {
           </div>
         </div>
         <div className="spline-graph">
-          <SplineChart isGrowth={isGrowth} />
+          {/* <SplineChart isGrowth={isGrowth} /> */}
+          <img
+            className="growth-img"
+            height="70"
+            width="100"
+            src={isGrowth ? growthPositiveImg : growthNegativeImg}
+            alt="img"
+          ></img>
         </div>
       </div>
     </div>
