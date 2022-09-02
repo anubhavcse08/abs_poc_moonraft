@@ -1,17 +1,18 @@
 import React from "react";
 import { weekWiseData } from "../../apiData/forecastData";
 
-const TitleForecastStatus = ({resultShow}) => {
+const TitleForecastStatus = ({resultShow, currentPeriod}) => {
   const forecastStatus = [
     { title: "Good", bgColor: "bg-sky-600" },
     { title: "Average", bgColor: "bg-sky-400" },
     { title: "Low", bgColor: "bg-sky-200" }
   ];
+  const currentQuarterDataValue = weekWiseData.data.filter(data => data.quarter === currentPeriod);
   return (
     <div className="flex flex-row justify-between item-center">
       <div className="text-xss">
         Showing <span className="font-semibold">{resultShow}</span> of{" "}
-        <span className="font-semibold">{weekWiseData.data.length}</span>
+        <span className="font-semibold">{currentQuarterDataValue.length}</span>
       </div>
       <div className="flex flex-row text-xs gap-3 md:gap-4">
         {forecastStatus.map(({ title, bgColor }) => {

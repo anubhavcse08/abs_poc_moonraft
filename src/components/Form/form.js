@@ -7,22 +7,22 @@ const Form = () => {
         <option value="1" selected>
           NORCAL
         </option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
+        <option value="2">Denver</option>
+        <option value="3">Portland</option>
       </select>
       <select class="form-select">
         <option value="1" selected>
-          Beverages
+          Snacks
         </option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
+        <option value="2">Soft Drinks</option>
       </select>
       <select class="form-select">
         <option value="1" selected>
-          Cofee
+          Cookies
         </option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
+        <option value="2">Crackers</option>
+        <option value="3">Sports Drinks</option>
+        <option value="4">Energy Drinks</option>
       </select>
       <div className="inline-flex gap-4">
         <button

@@ -12,7 +12,7 @@ import TitleForecastStatus from "./components/dashboard/TitleForecastStatus";
 
 const App = () => {
 
-  const [selectStatus, setselectStatus] = useState('Status');
+  const [selectStatus, setselectStatus] = useState('All');
   const [resultShow, setResultShow] = useState(0);
   const [currentQuater, setCurrentQuater] = useState('This Quarter');
   const [currentQuaterData, setCurrentQuaterData] = useState([]);
@@ -82,7 +82,7 @@ const App = () => {
           <div class="card-header flex flex-wrap gap-y-2 gap-x-4 md:gap-0 items-center p-4 border-b border-slate-300 text-xs">
             <div className="inline-flex md:contents order-1 items-center gap-4">
               <div className="relative border rounded p-1 md:py-2 md:px-4">
-                <i class="bi bi-calendar4 pr-2"></i>{currentQuaterData.period}
+                <i class="bi bi-calendar4 pr-2"></i>{currentQuaterData && currentQuaterData.period}
               </div>
 
               <div className="border w-px mx-4 py-4 hidden md:block order-3"></div>
@@ -112,7 +112,7 @@ const App = () => {
               <div class="filterby mt-1 ml-4 md:ml-auto order-5">
                 <label className="text-gray-500">Filter by:</label>
                 <select class="font-medium ml-1 pr-1" onChange={onSelectStatus}>
-                  <option value="Status" selected>Status</option>
+                  <option value="All" selected>All</option>
                   <option value="Approved">Approved</option>
                   <option value="Draft">Draft</option>
                   <option value="Planning">Planning</option>
@@ -131,7 +131,7 @@ const App = () => {
             </div>
           </div>
           <div class="card-body py-3 px-4">
-            <TitleForecastStatus resultShow={resultShow} />
+            <TitleForecastStatus resultShow={resultShow} currentPeriod={currentQuaterData.period}/>
             <TableDesc
               selectStatus={selectStatus}
               onShowResult={onShowResult}
