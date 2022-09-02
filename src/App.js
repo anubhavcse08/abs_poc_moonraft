@@ -2,7 +2,7 @@ import React from "react";
 import PromotionManagement from "./pages/promotionManagement/PromotionManagement";
 import Header from "./components/common/header/Header";
 import { header } from "./apiData/header";
-import "./App.css";
+import "./styles/Global.css";
 
 
 const App = () => {
