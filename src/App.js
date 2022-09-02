@@ -73,9 +73,9 @@ const App = () => {
               {currentQuaterData && currentQuaterData.metrics && currentQuaterData.metrics.map(data => {
                 return <GraphCard options={data} isGrowth={data.isTrendPositive} />
               })}
-            </div>
           </div>
         </div>
+       </div>
       </section>
       <section>
         <div class="card">
@@ -104,7 +104,7 @@ const App = () => {
                 </div>
                 <input
                   type="search"
-                  className="border rounded p-1 md:p-2 border-stone-300 focus:border-stone-400 w-full"
+                  className="border-2 rounded p-1 md:p-2 border-stone-300 focus:border-stone-400 w-full"
                   placeholder="Search"
                   required
                 ></input>
