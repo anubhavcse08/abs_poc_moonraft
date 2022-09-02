@@ -443,7 +443,7 @@ export const weekWiseData = {
             noOfRows: 1,
             quarter: "Q1, 2023",
             forecastInfo: [{
-                startWeek: "10/03/22",
+                startWeek: "01/03/23",
                 Forecast: "$12.99",
                 status: "Approved",
                 weeks: 1,
@@ -455,14 +455,14 @@ export const weekWiseData = {
             noOfRows: 1,
             quarter: "Q1, 2023",
             forecastInfo: [{
-                startWeek: "10/03/22",
+                startWeek: "01/03/23",
                 Forecast: "$20.99",
                 status: "Planning",
                 weeks: 3,
                 $row: 1
             },
             {
-                startWeek: "11/21/22",
+                startWeek: "02/21/23",
                 Forecast: "$20.99",
                 status: "Pending with Vendor",
                 weeks: 3,
@@ -474,14 +474,14 @@ export const weekWiseData = {
             noOfRows: 2,
             quarter: "Q1, 2023",
             forecastInfo: [{
-                startWeek: "10/03/22",
+                startWeek: "01/03/23",
                 Forecast: "$12.99",
                 status: "Approved",
                 weeks: 9,
                 $row: 1
             },
             {
-                startWeek: "10/03/22",
+                startWeek: "01/03/23",
                 Forecast: "$20.99",
                 status: "Draft",
                 weeks: 9,
@@ -493,21 +493,21 @@ export const weekWiseData = {
             noOfRows: 2,
             quarter: "Q1, 2023",
             forecastInfo: [{
-                startWeek: "10/03/22",
+                startWeek: "01/03/23",
                 Forecast: "$20.99",
                 status: "Draft",
                 weeks: 3,
                 $row: 1
             },
             {
-                startWeek: "11/07/22",
+                startWeek: "02/07/23",
                 Forecast: "$20.99",
                 status: "Draft",
                 weeks: 6,
                 $row: 1
             },
             {
-                startWeek: "10/03/22",
+                startWeek: "01/03/23",
                 Forecast: "$20.99",
                 status: "Executed",
                 weeks: 3,
@@ -519,35 +519,35 @@ export const weekWiseData = {
             noOfRows: 2,
             quarter: "Q1, 2023",
             forecastInfo: [{
-                startWeek: "10/03/22",
+                startWeek: "01/03/23",
                 Forecast: "$12.99",
                 status: "Approved",
                 weeks: 13,
                 $row: 1
             },
             {
-                startWeek: "10/03/22",
+                startWeek: "01/03/23",
                 Forecast: "$12.99",
                 status: "Approved",
                 weeks: 2,
                 $row: 2
             },
             {
-                startWeek: "10/24/22",
+                startWeek: "01/24/23",
                 Forecast: "$20.99",
                 status: "Draft",
                 weeks: 3,
                 $row: 2
             },
             {
-                startWeek: "11/14/22",
+                startWeek: "02/14/23",
                 Forecast: "$20.99",
                 status: "Draft",
                 weeks: 3,
                 $row: 2
             },
             {
-                startWeek: "12/12/22",
+                startWeek: "03/12/23",
                 Forecast: "$20.99",
                 status: "Draft",
                 weeks: 3,
@@ -559,21 +559,21 @@ export const weekWiseData = {
             noOfRows: 2,
             quarter: "Q1, 2023",
             forecastInfo: [{
-                startWeek: "10/03/22",
+                startWeek: "01/03/23",
                 Forecast: "$12.99",
                 status: "Planning",
                 weeks: 13,
                 $row: 1
             },
             {
-                startWeek: "10/03/22",
+                startWeek: "01/03/23",
                 Forecast: "$20.99",
                 status: "Draft",
                 weeks: 5,
                 $row: 2
             },
             {
-                startWeek: "11/14/22",
+                startWeek: "02/14/23",
                 Forecast: "$20.99",
                 status: "Draft",
                 weeks: 4,
@@ -585,7 +585,7 @@ export const weekWiseData = {
             noOfRows: 1,
             quarter: "Q1, 2023",
             forecastInfo: [{
-                startWeek: "10/03/22",
+                startWeek: "01/03/23",
                 Forecast: "$12.99",
                 status: "Approved",
                 weeks: 1,
@@ -597,7 +597,7 @@ export const weekWiseData = {
             noOfRows: 1,
             quarter: "Q1, 2023",
             forecastInfo: [{
-                startWeek: "10/03/22",
+                startWeek: "01/03/23",
                 Forecast: "$12.99",
                 status: "Approved",
                 weeks: 13,
@@ -609,7 +609,7 @@ export const weekWiseData = {
             noOfRows: 1,
             quarter: "Q1, 2023",
             forecastInfo: [{
-                startWeek: "10/24/22",
+                startWeek: "01/24/23",
                 Forecast: "$20.99",
                 status: "Draft",
                 weeks: 5,
@@ -621,7 +621,7 @@ export const weekWiseData = {
             noOfRows: 1,
             quarter: "Q1, 2023",
             forecastInfo: [{
-                startWeek: "10/03/22",
+                startWeek: "01/03/23",
                 Forecast: "$20.99",
                 status: "Draft",
                 weeks: 4,
@@ -633,35 +633,35 @@ export const weekWiseData = {
             noOfRows: 3,
             quarter: "Q1, 2023",
             forecastInfo: [{
-                startWeek: "10/03/22",
+                startWeek: "01/03/23",
                 Forecast: "$20.99",
                 status: "Approved",
                 weeks: 13,
                 $row: 1
             },
             {
-                startWeek: "10/03/22",
+                startWeek: "01/03/23",
                 Forecast: "$12.99",
                 status: "Draft",
                 weeks: 1,
                 $row: 2
             },
             {
-                startWeek: "10/17/22",
+                startWeek: "01/17/23",
                 Forecast: "$20.99",
                 status: "Draft",
                 weeks: 3,
                 $row: 2
             },
             {
-                startWeek: "11/07/22",
+                startWeek: "02/07/23",
                 Forecast: "$20.99",
                 status: "Draft",
                 weeks: 5,
                 $row: 2
             },
             {
-                startWeek: "12/05/22",
+                startWeek: "03/05/23",
                 Forecast: "$20.99",
                 status: "Draft",
                 weeks: 4,
@@ -673,14 +673,14 @@ export const weekWiseData = {
             noOfRows: 3,
             quarter: "Q1, 2023",
             forecastInfo: [{
-                startWeek: "10/03/22",
+                startWeek: "01/03/23",
                 Forecast: "$20.99",
                 status: "Approved",
                 weeks: 13,
                 $row: 1
             },
             {
-                startWeek: "10/03/22",
+                startWeek: "01/03/23",
                 Forecast: "$12.99",
                 status: "Draft",
                 weeks: 1,

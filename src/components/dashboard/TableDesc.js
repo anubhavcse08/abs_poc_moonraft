@@ -10,7 +10,7 @@ const TableDesc = (props) => {
     const selectedStatusData = () => {
         let filterData = [];
         const currentQuarterDataValue = weekWiseData.data.filter(data => data.quarter === currentPeriod);
-        currentQuarterDataValue.map((item) => {
+        currentQuarterDataValue && currentQuarterDataValue.map((item) => {
             for (let i = 0; i < item.forecastInfo.length; i++) {
                 const data = item.forecastInfo[i];
                 const status = data.status === "Pending with Vendor" ? "Pending" : data.status;
@@ -40,8 +40,7 @@ const TableDesc = (props) => {
         )
     }
     const renderTableData = () => {
-        console.log('currentQuarterTableData+++++++++++', currentQuarterTableData);
-        return selectedStatusData() && selectedStatusData().map((item, index) => {
+        return currentQuarterTableData && currentQuarterTableData.map((item, index) => {
             return <tr key={index} className="border-dotted border-t-2 border-y-slate-300">
                 <td className='py-2 border border-x-slate-300 bg-white font-semibold w-60 px-2'>
                     <div className='flex flex-row items-center'>

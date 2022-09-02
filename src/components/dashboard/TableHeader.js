@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { foreCastInfo } from "../../apiData/forecastData";
 
 const getForecastStatus = (targetType) => {
