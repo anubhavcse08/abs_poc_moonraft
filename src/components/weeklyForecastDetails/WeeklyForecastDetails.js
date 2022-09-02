@@ -13,7 +13,7 @@ const WeeklyForecastDetails = (props) => {
                     <ForecastStatus resultShow={resultShow} currentPeriod={currentQuaterData.period} />
                     <Table selectStatus={selectStatus} onShowResult={onShowResult} currentPeriod={currentQuaterData.period} />
                     <div className="flex justify-center">
-                        <button className="px-3 py-1.5 text-sky-600 mx-auto rounded border md:border-2 border-sky-600 md:rounded-md text-xs">Load More</button>
+                        <button className="px-3 py-1.5 text-sky-600 mx-auto rounded border md:border-2 border-sky-600 font-medium md:rounded-md text-xs">Load More</button>
                     </div>
                 </div>
             </div >

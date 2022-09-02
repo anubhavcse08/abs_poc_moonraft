@@ -38,8 +38,8 @@ const Header = (prop) => {
     <div className="sticky top-0 z-50 bg-slate-100 px-5 md:px-5 py-2">
       <div className="flex items-center text-xs">
         <div className="flex flex-col md:flex-row">
-          <Title type="span" value={prop.header.type} classProperties="md:py-2 md:pr-4 md:border-r-2 md:border-dotted uppercase border-blue-200" />
-          <Title type="span" value={prop.header.address} classProperties="mt-1 md:mt-0 md:py-2 md:pl-4" />
+          <Title type="span" value={prop.header.type} classProperties="font-medium md:py-2 md:pr-4 md:border-r-2 md:border-dotted uppercase border-blue-200" />
+          <Title type="span" value={prop.header.address} classProperties="font-medium mt-1 md:mt-0 md:py-2 md:pl-4" />
         </div>
         <div className="search-box md:relative text-xs md:w-3/12 hidden md:block" id="global-search-box">
           <div className="modal-background md:hidden"></div>
