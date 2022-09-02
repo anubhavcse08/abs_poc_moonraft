@@ -1,7 +1,7 @@
 import React from "react";
-import SplineChart from "../SplineChart";
+import SplineChart from "../splineChart/SplineChart";
 
-const GraphCard = (props) => {
+const MetricCard = (props) => {
   const {
     options: { name, currentValue, targetValue, percentChange },
     isGrowth,
@@ -37,4 +37,4 @@ const GraphCard = (props) => {
   );
 };
 
-export default GraphCard;
+export default MetricCard;

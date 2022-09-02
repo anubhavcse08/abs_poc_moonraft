@@ -1,9 +1,9 @@
 import { useState } from "react";
-import "./TimeButtonMenu.css";
+import "./Tabs.css";
 
 const tabs = ["This Quarter", "Next Quarter", "YTD", "1 Year"];
 
-const TimeButtonMenu = (props) => {
+const Tabs = (props) => {
   const [checked, setChecked] = useState(tabs[0]);
   const getChecked = (e) => {
     props.getCurrentQuater(e.target.innerText);
@@ -25,4 +25,4 @@ const TimeButtonMenu = (props) => {
   );
 };
 
-export default TimeButtonMenu;
+export default Tabs;

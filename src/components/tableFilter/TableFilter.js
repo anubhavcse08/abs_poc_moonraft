@@ -1,7 +1,7 @@
 import React from 'react'
-import Abs_SelectFields from '../common/Abs_SelectFields';
+import Dropdown from '../common/dropdown/Dropdown';
 
-const Abs_FilterStatus = ({currentQuaterData, onSelectStatus}) => {
+const TableFilter = ({currentQuaterData, onSelectStatus}) => {
   const dataElemets = ["All", "Approved", "Draft", "Executed", "Planning", "Pending"];
   return (
     <div class="card-header flex flex-wrap gap-y-2 gap-x-4 md:gap-0 items-center p-4 border-b border-slate-300 text-xs">
@@ -27,7 +27,7 @@ const Abs_FilterStatus = ({currentQuaterData, onSelectStatus}) => {
         </div>
         <div class="filterby mt-1 ml-4 md:ml-auto order-5">
           <label className="text-gray-500">Filter by:</label>
-          <Abs_SelectFields onSelectValue={onSelectStatus} data={dataElemets} classProperties="font-medium ml-1 pr-1" />
+          <Dropdown onSelectValue={onSelectStatus} data={dataElemets} classProperties="font-medium ml-1 pr-1" />
         </div>
       </div>
       <div class="icons items-center gap-3 md:gap-4 ml-auto md:ml-4 text-xs md:text-base hidden md:flex order-6">
@@ -38,4 +38,4 @@ const Abs_FilterStatus = ({currentQuaterData, onSelectStatus}) => {
   )
 }
 
-export default Abs_FilterStatus;
+export default TableFilter;

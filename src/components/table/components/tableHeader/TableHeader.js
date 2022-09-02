@@ -1,5 +1,5 @@
 import React from "react";
-import { foreCastInfo } from "../../apiData/forecastData";
+import { foreCastInfo } from "../../../../apiData/forecastData";
 
 const getForecastStatus = (targetType) => {
     let bgColor = 'bg-sky-600';
