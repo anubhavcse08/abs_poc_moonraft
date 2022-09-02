@@ -12,7 +12,7 @@ const Metrics = ({ getCurrentQuater, currentQuaterData }) => {
                 </div>
                 <div className="card-body py-3 px-4">
                     <Tabs getCurrentQuater={getCurrentQuater} />
-                    <div className="card-graph-container item-flex-row gap-3">
+                    <div className="card-graph-container item-flex-row gap-3 hide-scrollbars">
                         {currentQuaterData && currentQuaterData.metrics && currentQuaterData.metrics.map((data, index) => {
                             return <MetricCard key={index} options={data} isGrowth={data.isTrendPositive} />
                         })}
