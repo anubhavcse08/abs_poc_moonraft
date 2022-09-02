@@ -46,7 +46,7 @@ const Table = (props) => {
             return <tr key={index} className="border-dotted border-b-2 border-y-slate-300">
                 <td className='py-2 border border-x-slate-300 bg-white font-semibold w-60 px-2'>
                     <div className='flex flex-row items-center'>
-                        <input type="checkbox" class="checked:bg-blue-500 cursor-pointer" />
+                        <input type="checkbox" className="checked:bg-blue-500 cursor-pointer" />
                         <p className='whitespace-nowrap text-ellipsis overflow-hidden text-gray-900 text-xs ml-1'>{item.Title}</p>
                     </div>
                 </td>

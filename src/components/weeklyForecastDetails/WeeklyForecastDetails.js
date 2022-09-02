@@ -7,9 +7,9 @@ const WeeklyForecastDetails = (props) => {
     const { onSelectStatus, currentQuaterData, resultShow, selectStatus, onShowResult } = props;
     return (
         <section>
-            <div class="card">
+            <div className="card">
                 <TableFilter onSelectStatus={onSelectStatus} currentQuaterData={currentQuaterData} />
-                <div class="card-body py-3 px-4">
+                <div className="card-body py-3 px-4">
                     <ForecastStatus resultShow={resultShow} currentPeriod={currentQuaterData.period} />
                     <Table selectStatus={selectStatus} onShowResult={onShowResult} currentPeriod={currentQuaterData.period} />
                     <div className="flex justify-center">

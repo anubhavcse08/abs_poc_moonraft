@@ -5,16 +5,16 @@ import Tabs from '../common/tabs/Tabs';
 const Metrics = ({ getCurrentQuater, currentQuaterData }) => {
     return (
         <section>
-            <div class="card">
-                <div class="card-header flex items-center p-4 border-b border-slate-300 font-semibold">
-                    <div className="text-base "><i class="bi bi-chevron-contract mr-1"></i>Metrics</div>
-                    <button class="button-more text-sky-600 text-xs md:text-sm ">More</button>
+            <div className="card">
+                <div className="card-header flex items-center p-4 border-b border-slate-300 font-semibold">
+                    <div className="text-base "><i className="bi bi-chevron-contract mr-1"></i>Metrics</div>
+                    <button className="button-more text-sky-600 text-xs md:text-sm ">More</button>
                 </div>
-                <div class="card-body py-3 px-4">
+                <div className="card-body py-3 px-4">
                     <Tabs getCurrentQuater={getCurrentQuater} />
                     <div className="card-graph-container item-flex-row gap-3">
-                        {currentQuaterData && currentQuaterData.metrics && currentQuaterData.metrics.map(data => {
-                            return <MetricCard options={data} isGrowth={data.isTrendPositive} />
+                        {currentQuaterData && currentQuaterData.metrics && currentQuaterData.metrics.map((data, index) => {
+                            return <MetricCard key={index} options={data} isGrowth={data.isTrendPositive} />
                         })}
                     </div>
                 </div>

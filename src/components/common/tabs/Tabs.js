@@ -13,10 +13,7 @@ const Tabs = (props) => {
     <div className="tabs">
       <ul className="flex items-stretch text-xs font-medium">
         {tabs.map((tab, i) => (
-          <li
-            className={"cursor-pointer tab " + (checked === tab ? "is-active" : "")}
-            onClick={getChecked}
-          >
+          <li key={i} className={"cursor-pointer tab " + (checked === tab ? "is-active" : "")} onClick={getChecked} >
             {tab}
           </li>
         ))}

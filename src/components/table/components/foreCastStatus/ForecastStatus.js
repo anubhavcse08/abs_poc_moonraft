@@ -15,9 +15,9 @@ const ForecastStatus = ({resultShow, currentPeriod}) => {
         <span className="font-semibold">{currentQuarterDataValue.length}</span>
       </div>
       <div className="flex flex-row text-xs gap-3 md:gap-4">
-        {forecastStatus.map(({ title, bgColor }) => {
+        {forecastStatus.map(({ title, bgColor }, index) => {
           return (
-            <div className="flex flex-column justify-center items-center gap-1 md:gap-2">
+            <div key={index} className="flex flex-column justify-center items-center gap-1 md:gap-2">
               <p className={`rounded-sm w-4 h-3.5 ${bgColor}`}></p>
               <p>{title}</p>
             </div>

@@ -8,7 +8,7 @@ const PageHeader = () => {
         <Title type="anchorIcon" classProperties="text-sky-600 text-xss font-bold" value="WORKLIST" href="/worklist" iconClassProps="bi bi-arrow-left pr-1" dataNotification={""} />
         <Title type="heading" classProperties="font-bold text-lg md:text-2xl md:mt-2" value="Promotion Management" />
       </div>
-      <button type="button" class="add-event-btn text-white bg-sky-600 hover:bg-sky-800 rounded md:rounded-lg text-xs md:text-sm px-2 py-1 md:px-3 md:py-2 focus:outline-none">
+      <button type="button" className="add-event-btn text-white bg-sky-600 hover:bg-sky-800 rounded md:rounded-lg text-xs md:text-sm px-2 py-1 md:px-3 md:py-2 focus:outline-none">
         Add Event
       </button>
     </header>
