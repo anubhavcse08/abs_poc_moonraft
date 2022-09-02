@@ -24,7 +24,7 @@ const TableHeader = ({ headerTitle, currentPeriod }) => {
     return <tr className={`${headerTitle === 'Weeks' ? 'bg-white' : 'bg-sky-50'}`}>
         <th className='py-2 border border-slate-300 font-semibold w-60 px-2 text-left text-xs'>{headerTitle}</th>
         {currentQuarterData.map((item, index) => {
-            return <th key={index} className={`${headerTitle === 'Weeks' ? 'py-1' : 'py-3'} border border-slate-300 font-semibold text-center w-24`}>
+            return <th key={index} className={`${headerTitle === 'Weeks' ? 'py-1' : 'py-3'} border border-slate-300 font-semibold text-center w-20`}>
                 {headerTitle === 'Weeks' ?
                     <><p className="whitespace-no-wrap text-gray-500 text-xs text-custom-small">{item.week}</p>
                         <p className='whitespace-no-wrap text-gray-600 text-xs'>{item.weekNumber}</p></> : <>
