@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { foreCastInfo } from "../../apiData/forecastData";
 
 const getForecastStatus = (targetType) => {
@@ -18,12 +18,13 @@ const getForecastStatus = (targetType) => {
     }
     return bgColor;
 }
-const TableHeader = ({ headerTitle }) => {
-    const [foreCastDetails] = useState(foreCastInfo);
+const TableHeader = ({ headerTitle, currentPeriod }) => {
+    const currentQuarterData = foreCastInfo.filter(data => data.quarter === currentPeriod);
+
     return <tr className={`${headerTitle === 'Weeks' ? 'bg-white' : 'bg-sky-50'}`}>
         <th className='py-2 border border-slate-300 font-semibold w-60 px-2 text-left text-xs'>{headerTitle}</th>
-        {foreCastDetails.map((item, index) => {
-            return <th key={index} className={`${headerTitle === 'Weeks' ? 'py-1' : 'py-3'} border border-slate-300 font-semibold text-center w-20`}>
+        {currentQuarterData.map((item, index) => {
+            return <th key={index} className={`${headerTitle === 'Weeks' ? 'py-1' : 'py-3'} border border-slate-300 font-semibold text-center w-24`}>
                 {headerTitle === 'Weeks' ?
                     <><p className="whitespace-no-wrap text-gray-500 text-xs text-custom-small">{item.week}</p>
                         <p className='whitespace-no-wrap text-gray-600 text-xs'>{item.weekNumber}</p></> : <>
