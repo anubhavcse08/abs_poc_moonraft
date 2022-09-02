@@ -9,15 +9,6 @@ function SplineChart(props) {
         chart: {
             type: 'spline'
         },
-        // title: {
-        //   text: '3.5%',
-        //   align: 'right',
-        //   style: {
-        //     fontWeight: 'bold',
-        //     // fontSize: '100px',
-        //     color: 'green'
-        //   }
-        // },
         plotOptions: {
             areaspline: {
                 fillColor: {

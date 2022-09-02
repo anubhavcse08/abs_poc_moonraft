@@ -1,8 +1,9 @@
-import "./header.css";
-import profile from "../../assets/dummy-profile.png";
-import { useEffect } from "react";
 
-const TopHeader = (prop) => {
+import { useEffect } from "react";
+import profile from "../../../assets/dummy-profile.png";
+import "./Header.css";
+
+const Header = (prop) => {
   document.onkeyup = function (e) {
     if (e.ctrlKey && e.which == 75) {
       document.getElementById("global-search").focus();
@@ -98,4 +99,4 @@ const TopHeader = (prop) => {
   );
 };
 
-export default TopHeader;
+export default Header;

@@ -1,8 +1,8 @@
 import React from 'react'
-import GraphCard from './GraphCard';
-import TimeButtonMenu from './TimeButtonMenu';
+import MetricCard from "../common/metricCard/MetricCard";
+import Tabs from '../common/tabs/Tabs';
 
-const Abs_MetricsCard = ({ getCurrentQuater, currentQuaterData }) => {
+const Metrics = ({ getCurrentQuater, currentQuaterData }) => {
     return (
         <section>
             <div class="card">
@@ -11,10 +11,10 @@ const Abs_MetricsCard = ({ getCurrentQuater, currentQuaterData }) => {
                     <button class="button-more text-sky-600 text-xs md:text-sm ">More</button>
                 </div>
                 <div class="card-body py-3 px-4">
-                    <TimeButtonMenu getCurrentQuater={getCurrentQuater} />
+                    <Tabs getCurrentQuater={getCurrentQuater} />
                     <div className="card-graph-container item-flex-row gap-3">
                         {currentQuaterData && currentQuaterData.metrics && currentQuaterData.metrics.map(data => {
-                            return <GraphCard options={data} isGrowth={data.isTrendPositive} />
+                            return <MetricCard options={data} isGrowth={data.isTrendPositive} />
                         })}
                     </div>
                 </div>
@@ -23,4 +23,4 @@ const Abs_MetricsCard = ({ getCurrentQuater, currentQuaterData }) => {
     )
 }
 
-export default Abs_MetricsCard;
+export default Metrics;

@@ -1,6 +1,7 @@
-import "./header.css";
+import Title from "../common/text/Title";
+import "./PageHeader.css";
 
-const Header = () => {
+const PageHeader = () => {
   return (
     <header className="app-header flex items-start md:items-center px-5 py-2 md:px-5 md:pt-3 md:pb-4 border-t-2 border-b">
       <div className="flex flex-col">
@@ -8,7 +9,7 @@ const Header = () => {
           <i class="bi bi-arrow-left pr-1"></i>
           WORKLIST
         </a>
-        <h1 className="font-bold text-lg md:text-2xl md:mt-2">Promotion Management</h1>
+      <Title type="heading" value="Promotion Management" />
       </div>
       <button
         type="button"
@@ -20,4 +21,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default PageHeader;

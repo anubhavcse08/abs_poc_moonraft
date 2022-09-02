@@ -1,7 +1,7 @@
 import React from "react";
-import { weekWiseData } from "../../apiData/forecastData";
+import { weekWiseData } from "../../../../apiData/forecastData";
 
-const TitleForecastStatus = ({resultShow, currentPeriod}) => {
+const ForecastStatus = ({resultShow, currentPeriod}) => {
   const forecastStatus = [
     { title: "Good", bgColor: "bg-sky-600" },
     { title: "Average", bgColor: "bg-sky-400" },
@@ -28,4 +28,4 @@ const TitleForecastStatus = ({resultShow, currentPeriod}) => {
   );
 };
 
-export default TitleForecastStatus;
+export default ForecastStatus;

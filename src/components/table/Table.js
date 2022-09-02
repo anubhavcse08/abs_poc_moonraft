@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { weekWiseData } from "../../apiData/forecastData";
-import TableBody from "./TableBody";
-import TableHeader from "./TableHeader";
-import "./TableDesc.css";
+import TableBody from "./components/tableBody/TableBody";
+import TableHeader from "./components/tableHeader/TableHeader";
+import "./Table.css";
 
-const TableDesc = (props) => {
+const Table = (props) => {
     const { selectStatus, onShowResult, currentPeriod } = props;
     const [currentQuarterTableData, setCurrentQuarterTableData] = useState([]);
 
@@ -71,4 +71,4 @@ const TableDesc = (props) => {
     );
 };
 
-export default TableDesc;
+export default Table;

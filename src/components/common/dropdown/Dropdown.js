@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Abs_SelectFields = ({onSelectValue, classProperties, data}) => {
+const Dropdown = ({onSelectValue, classProperties, data}) => {
     return (
         <select className={classProperties} onChange={onSelectValue}>
             {data.map(item => {
@@ -10,4 +10,4 @@ const Abs_SelectFields = ({onSelectValue, classProperties, data}) => {
     )
 }
 
-export default Abs_SelectFields;
+export default Dropdown;

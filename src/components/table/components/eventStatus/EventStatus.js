@@ -29,7 +29,7 @@ const getStatusColor = (status) => {
   }
   return { bgColor, borderColor, textStatusColor };
 }
-const DataCellLabel = (props) => {
+const EventStatus = (props) => {
   const { option: { Forecast, status, weeks }, row } = props;
   const { bgColor, borderColor, textStatusColor } = getStatusColor(status);
   return (
@@ -42,4 +42,4 @@ const DataCellLabel = (props) => {
   );
 };
 
-export default DataCellLabel;
+export default EventStatus;
