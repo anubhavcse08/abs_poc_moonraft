@@ -28,4 +28,4 @@ To Start Server:
 
 To Visit App:
 
-`localhost:3000/`  
+`https://anubhavcse08.github.io/albertsons-poc/`  
