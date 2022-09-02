@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/albertsons-poc/static/css/main.eb77b274.css",
-    "main.js": "/albertsons-poc/static/js/main.226314b1.js",
+    "main.js": "/albertsons-poc/static/js/main.e01db234.js",
     "static/js/787.231b45b3.chunk.js": "/albertsons-poc/static/js/787.231b45b3.chunk.js",
     "static/media/bootstrap-icons.woff?": "/albertsons-poc/static/media/bootstrap-icons.e559bf06bc84fd9525e6.woff",
     "static/media/bootstrap-icons.woff2?": "/albertsons-poc/static/media/bootstrap-icons.ea98e12d2d58747f9fc5.woff2",
     "static/media/dummy-profile.png": "/albertsons-poc/static/media/dummy-profile.871ba018ce0fbe9e423a.png",
     "index.html": "/albertsons-poc/index.html",
     "main.eb77b274.css.map": "/albertsons-poc/static/css/main.eb77b274.css.map",
-    "main.226314b1.js.map": "/albertsons-poc/static/js/main.226314b1.js.map",
+    "main.e01db234.js.map": "/albertsons-poc/static/js/main.e01db234.js.map",
     "787.231b45b3.chunk.js.map": "/albertsons-poc/static/js/787.231b45b3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.eb77b274.css",
-    "static/js/main.226314b1.js"
+    "static/js/main.e01db234.js"
   ]
 }
