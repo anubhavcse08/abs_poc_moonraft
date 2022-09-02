@@ -12,12 +12,14 @@ const TableDesc = (props) => {
         let filterData = [];
         const currentQuarterDataValue = weekWiseData.data.filter(data => data.quarter === currentPeriod);
         currentQuarterDataValue && currentQuarterDataValue.map((item) => {
-            item.forecastInfo.find(data => {
+            for (let i = 0; i < item.forecastInfo.length; i++) {
+                const data = item.forecastInfo[i];
                 const status = data.status === "Pending with Vendor" ? "Pending" : data.status;
                 if (status === selectStatus) {
                     filterData.push(item);
+                    break;
                 }
-            });
+            }
         });
         if (selectStatus === 'All' && filterData.length === 0) {
             filterData = currentQuarterDataValue;
