@@ -50,7 +50,7 @@ const Table = (props) => {
                         <p className='whitespace-nowrap text-ellipsis overflow-hidden text-gray-900 text-xs ml-1'>{item.Title}</p>
                     </div>
                 </td>
-                <TableBody item={item} currentPeriod={currentPeriod} />
+                <TableBody item={item} rowIndex={index} currentPeriod={currentPeriod} />
             </tr>
         });
     }
