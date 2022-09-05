@@ -10,7 +10,7 @@ const TableBody = ({ item, rowIndex, currentPeriod }) => {
         setCurrentForecastData(item.forecastInfo);
     }, [item]);
 
-    const swapBoxes = (fromBox, toBox) => {
+    const swapEventStatus = (fromEvent, toEvent) => {
         let eventLabels = currentQuarterData.slice();
         let currentLabelsData = currentForecastData.slice();
         let fromIndex = -1;
@@ -18,27 +18,27 @@ const TableBody = ({ item, rowIndex, currentPeriod }) => {
         let currentLabels = 0;
 
         for (let i = 0; i < eventLabels.length; i++) {
-            if (eventLabels[i].week === fromBox.startWeek) {
+            if (eventLabels[i].week === fromEvent.startWeek) {
                 fromIndex = i;
             }
-            if (eventLabels[i].week === toBox.startWeek) {
+            if (eventLabels[i].week === toEvent.startWeek) {
                 toIndex = i;
             }
         }
         for (let i = 0; i < currentLabelsData.length; i++) {
             const data = currentLabelsData[i];
-            if (data.startWeek === fromBox.startWeek) {
+            if (data.startWeek === fromEvent.startWeek) {
                 currentLabels = i;
             }
         }
-        if (fromIndex != -1 && toIndex != -1 && fromBox.index === rowIndex) {
-            currentLabelsData[currentLabels].startWeek = toBox.startWeek;
+        if (fromIndex !== -1 && toIndex !== -1 && fromEvent.index === rowIndex) {
+            currentLabelsData[currentLabels].startWeek = toEvent.startWeek;
             setCurrentForecastData(currentLabelsData);
         }
     };
     const onDragStart = (e, startWeek, index) => {
-        let fromBox = JSON.stringify({ startWeek, index });
-        e.dataTransfer.setData("dragContent", fromBox);
+        let fromEvent = JSON.stringify({ startWeek, index });
+        e.dataTransfer.setData("dragContent", fromEvent);
     }
     const onDragOver = (e) => {
         e.preventDefault(); // Necessary. Allows us to drop.
@@ -46,9 +46,9 @@ const TableBody = ({ item, rowIndex, currentPeriod }) => {
     }
     const onDrop = (e, startWeek, index) => {
         e.preventDefault();
-        let fromBox = JSON.parse(e.dataTransfer.getData("dragContent"));
-        let toBox = { startWeek, index };
-        swapBoxes(fromBox, toBox);
+        let fromEvent = JSON.parse(e.dataTransfer.getData("dragContent"));
+        let toEvent = { startWeek, index };
+        swapEventStatus(fromEvent, toEvent);
         return false;
     }
 
