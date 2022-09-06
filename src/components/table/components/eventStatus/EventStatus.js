@@ -30,11 +30,21 @@ const getStatusColor = (status) => {
   return { bgColor, borderColor, textStatusColor };
 }
 const EventStatus = (props) => {
-  const { option: {startWeek, Forecast, status, weeks }, row, dragAction: { draggable, onDragStart, rowIndex } } = props;
+  const { option: { startWeek, Forecast, status, weeks }, row, eventIndex, dragAction: {
+    draggable, onTouchDown, onTouchMove, onTouchEnd, onMouseDown, onMove, onUp, rowIndex } } = props;
   const { bgColor, borderColor, textStatusColor } = getStatusColor(status);
-  const classProps = `data-cell-label absolute z-10 ${row > 1 ? `top-cell-${row}` : 'top-2'} ${weeks === 1 ? 'sm-line-height' : ''} left-0.2 py-1 ${bgColor} flex flex-row flex-wrap justify-left items-center ${borderColor} text-custom-small cursor-move cell-width-${weeks}`;
+  const eventId = `data-cell-label-${rowIndex}-${eventIndex}`;
+  const classProps = `absolute z-10 ${row > 1 ? `top-cell-${row}` : 'top-2'} ${weeks === 1 ? 'sm-line-height' : ''} left-0.2 py-1 ${bgColor} flex flex-row flex-wrap justify-left items-center ${borderColor} text-custom-small cursor-move cell-width-${weeks}`;
   return (
-    <div className={classProps} draggable={draggable} onDragStart={(e) => onDragStart(e, startWeek, rowIndex)}>
+    <div id={eventId} className={classProps}
+      draggable={draggable}
+      onTouchStart={(e) => { onTouchDown(e, eventId) }}
+      onTouchMove={(e) => { onTouchMove(e, eventId) }}
+      onTouchEnd={(e) => { onTouchEnd(e, eventId) }}
+      onMouseDown={(e) => { onMouseDown(e, eventId) }}
+      onMouseMove={(e) => { onMove(e, eventId) }}
+      onMouseUp={(e) => { onUp(e, eventId) }}
+    >
       {status === 'Approved' || status === 'Executed' ? <p className='code-icon'>&#8414;</p> : <p className='code-icon'>&#8413;</p>}
       <p className={`status-label m-0.5 p-px font-medium text-${textStatusColor}`}>{status}</p>
       <p className={`status-zone-label m-0.5 p-px font-medium text-white bg-${textStatusColor} rounded-sm`}>4A</p>
