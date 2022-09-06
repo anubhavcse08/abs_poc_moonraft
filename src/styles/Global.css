@@ -3,7 +3,12 @@
   --border: rgb(203, 213, 225); /* slate-300*/
   --border-active: var(--secondary-color);
 }
-
+/* .resize {
+  overflow:auto;
+} */
+/* .resize.horizontal {
+  resize: horizontal;
+} */
 h1,
 h2,
 h3,
@@ -40,9 +45,6 @@ p {
 }
 p {
   margin-bottom: 0;
-}
-.sm-line-height {
-  line-height: 4px;
 }
 .spline-graph .highcharts-container {
   margin-top: -8px;
