@@ -3,7 +3,23 @@
   --border: rgb(203, 213, 225); /* slate-300*/
   --border-active: var(--secondary-color);
 }
-
+.resizer {
+  position: absolute;
+}
+.resizer-r {
+  cursor: w-resize;
+  height: 100%;
+  width: 5px;
+  right: 0;
+  top: 0;
+}
+.resizer-l {
+  cursor: e-resize;
+  height: 100%;
+  width: 5px;
+  left: 0;
+  top: 0;
+}
 h1,
 h2,
 h3,

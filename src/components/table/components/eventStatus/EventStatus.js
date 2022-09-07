@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const getStatusColor = (status) => {
   let bgColor = '', borderColor = '', textStatusColor = 'default-status';
@@ -30,15 +30,104 @@ const getStatusColor = (status) => {
   return { bgColor, borderColor, textStatusColor };
 }
 const EventStatus = (props) => {
-  const { option: {startWeek, Forecast, status, weeks }, row, dragAction: { draggable, onDragStart, rowIndex } } = props;
+  let { option: { startWeek, Forecast, status, weeks, $row }, updateWeeksData, rowIndex, eventIndex,
+    // dragAction: { draggable, onDragStart, rowIndex }
+  } = props;
   const { bgColor, borderColor, textStatusColor } = getStatusColor(status);
-  const classProps = `data-cell-label absolute z-10 ${row > 1 ? `top-cell-${row}` : 'top-2'} ${weeks === 1 ? 'sm-line-height' : ''} left-0.2 py-1 ${bgColor} flex flex-row flex-wrap justify-left items-center ${borderColor} text-custom-small cursor-move cell-width-${weeks}`;
+  // const [weekState, setweekState] = useState(weeks);
+  const refCellLabel = useRef(null);
+  const refLeft = useRef(null);
+  const refRight = useRef(null);
+
+  // useEffect(() => {
+  //   // setweekState(weeks);
+  //   // updateWeeksData();
+  // }, [weeks, updateWeeksData])
+
+  useEffect(() => {
+    const resizableElement = refCellLabel.current;
+    const styles = window.getComputedStyle(resizableElement);
+    // console.log(styles, " >>>>>>>>>>>");
+    let width = parseInt(styles.width, 10);
+    // let height = parseInt(styles.height, 10);
+    let x = 0;
+    // let y = 0;
+    // resizableElement.style.top = '0px';
+    // resizableElement.style.left = '0px';
+    const updateNumberOfWeeks = (expandableWidth) => {
+      if (expandableWidth >= 1) {
+        const options = { expandableWidth, startWeek, rowIndex, eventIndex };
+        updateWeeksData(options);
+      }
+    }
+    const calculateExactWidth = (width) => {
+      let calculateWidth = Math.round(width / 16);
+      let expandableWidth = (Math.round(calculateWidth / 5) || 1);
+      expandableWidth = expandableWidth <= 13 ? expandableWidth : 13;
+      calculateWidth = (expandableWidth || 1) * 5;
+      updateNumberOfWeeks(expandableWidth);
+      return `${calculateWidth}rem`;
+    }
+    //Right move
+    const onMouseMoveRightResize = (event) => {
+      const dx = event.clientX - x;
+      x = event.clientX;
+      width = width + dx;
+      width = width <= 80 ? 80 : width;
+      resizableElement.style.width = `${width}px`;
+    }
+    const onMouseUpRightResize = () => {
+      resizableElement.style.width = calculateExactWidth(width);
+      document.removeEventListener('mousemove', onMouseMoveRightResize)
+    }
+    const onMouseDownRightResize = (event) => {
+      x = event.clientX;
+      resizableElement.style.left = styles.left;
+      resizableElement.style.right = null;
+      document.addEventListener('mousemove', onMouseMoveRightResize);
+      document.addEventListener('mouseup', onMouseUpRightResize);
+    }
+    //Left move
+    const onMouseMoveLeftResize = (event) => {
+      const dx = event.clientX - x;
+      x = event.clientX;
+      width = width - dx;
+      width = width <= 80 ? 80 : width;
+      resizableElement.style.width = `${width}px`;
+    }
+    const onMouseUpLeftResize = () => {
+      resizableElement.style.width = calculateExactWidth(width);
+      document.removeEventListener('mousemove', onMouseMoveLeftResize)
+    }
+    const onMouseDownLeftResize = (event) => {
+      x = event.clientX;
+      resizableElement.style.right = styles.right;
+      resizableElement.style.left = null;
+      document.addEventListener('mousemove', onMouseMoveLeftResize);
+      document.addEventListener('mouseup', onMouseUpLeftResize);
+    }
+
+    // Add mouse down event listner
+    const resizerRight = refRight.current;
+    resizerRight.addEventListener('mousedown', onMouseDownRightResize);
+    const resizerLeft = refLeft.current;
+    resizerLeft.addEventListener('mousedown', onMouseDownLeftResize);
+
+    return () => {
+      resizerRight.removeEventListener('mousedown', onMouseDownRightResize);
+      resizerLeft.removeEventListener('mousedown', onMouseDownLeftResize);
+    }
+  }, [])
+  // console.log('weekStateweekState ', weekState)
+  const classProps = `data-cell-label absolute z-10 ${$row > 1 ? `top-cell-${$row}` : 'top-2'} ${weeks === 1 ? 'sm-line-height' : ''} left-0.2 py-1 ${bgColor} flex flex-row flex-wrap justify-left items-center ${borderColor} text-custom-small cell-width-${weeks}`;
   return (
-    <div className={classProps} draggable={draggable} onDragStart={(e) => onDragStart(e, startWeek, rowIndex)}>
+    <div ref={refCellLabel} className={classProps}>
+      <div ref={refLeft} className='resizer resizer-l'></div>
       {status === 'Approved' || status === 'Executed' ? <p className='code-icon'>&#8414;</p> : <p className='code-icon'>&#8413;</p>}
       <p className={`status-label m-0.5 p-px font-medium text-${textStatusColor}`}>{status}</p>
       <p className={`status-zone-label m-0.5 p-px font-medium text-white bg-${textStatusColor} rounded-sm`}>4A</p>
       <p className='status-amount-label m-0.5 p-px font-medium'>{Forecast}</p>
+      <div ref={refRight} className='resizer resizer-r'></div>
     </div>
   );
 };
