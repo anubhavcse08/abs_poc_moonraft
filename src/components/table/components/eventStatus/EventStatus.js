@@ -47,26 +47,27 @@ const EventStatus = (props) => {
   useEffect(() => {
     const resizableElement = refCellLabel.current;
     const styles = window.getComputedStyle(resizableElement);
-    // console.log(styles, " >>>>>>>>>>>");
     let width = parseInt(styles.width, 10);
     // let height = parseInt(styles.height, 10);
     let x = 0;
     // let y = 0;
     // resizableElement.style.top = '0px';
     // resizableElement.style.left = '0px';
-    const updateNumberOfWeeks = (expandableWidth) => {
+    const labelWidth = (width) => {
+      let calculateWidth = Math.round(width / 16);
+      let expandableWidth = (Math.round(calculateWidth / 5) || 1);
+      expandableWidth = expandableWidth <= 13 ? expandableWidth : 13;
+      return expandableWidth;
+    }
+    const updateNumberOfWeeks = (width, moveType) => {
+      const expandableWidth = labelWidth(width);
       if (expandableWidth >= 1) {
-        const options = { expandableWidth, startWeek, rowIndex, eventIndex };
+        const options = { expandableWidth, startWeek, rowIndex, eventIndex, moveType };
         updateWeeksData(options);
       }
     }
     const calculateExactWidth = (width) => {
-      let calculateWidth = Math.round(width / 16);
-      let expandableWidth = (Math.round(calculateWidth / 5) || 1);
-      expandableWidth = expandableWidth <= 13 ? expandableWidth : 13;
-      calculateWidth = (expandableWidth || 1) * 5;
-      updateNumberOfWeeks(expandableWidth);
-      return `${calculateWidth}rem`;
+      return `${(labelWidth(width) || 1) * 5}rem`;
     }
     //Right move
     const onMouseMoveRightResize = (event) => {
@@ -74,6 +75,7 @@ const EventStatus = (props) => {
       x = event.clientX;
       width = width + dx;
       width = width <= 80 ? 80 : width;
+      updateNumberOfWeeks(width, 'rightmove');
       resizableElement.style.width = `${width}px`;
     }
     const onMouseUpRightResize = () => {
@@ -93,6 +95,7 @@ const EventStatus = (props) => {
       x = event.clientX;
       width = width - dx;
       width = width <= 80 ? 80 : width;
+      updateNumberOfWeeks(width, 'leftmove');
       resizableElement.style.width = `${width}px`;
     }
     const onMouseUpLeftResize = () => {
