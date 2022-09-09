@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { foreCastInfo } from '../../../../apiData/forecastData';
 
 const getStatusColor = (status) => {
   let bgColor = '', borderColor = '', textStatusColor = 'default-status';
@@ -30,11 +31,12 @@ const getStatusColor = (status) => {
   return { bgColor, borderColor, textStatusColor };
 }
 const EventStatus = (props) => {
-  let { option: { startWeek, Forecast, status, weeks, $row }, updateWeeksData, rowIndex, eventIndex,
-    // dragAction: { draggable, onDragStart, rowIndex }
+  let { option: { startWeek, Forecast, status, weeks, $row },
+    updateWeeksData, eventIndex, dragAction: { selectStatus, rowIndex, currentPeriod }
   } = props;
   const { bgColor, borderColor, textStatusColor } = getStatusColor(status);
-  // const [weekState, setweekState] = useState(weeks);
+  const currentQuarterData = foreCastInfo.filter(data => data.quarter === currentPeriod);
+  const [currentItemWidth, setCurrentItemWidth] = useState(80);
   const refCellLabel = useRef(null);
   const refLeft = useRef(null);
   const refRight = useRef(null);
@@ -62,9 +64,26 @@ const EventStatus = (props) => {
     const updateNumberOfWeeks = (width, moveType) => {
       const expandableWidth = labelWidth(width);
       if (expandableWidth >= 1) {
-        const options = { expandableWidth, startWeek, rowIndex, eventIndex, moveType };
+        const options = {
+          expandableWidth, startWeek, rowIndex,
+          selectStatus, eventIndex, moveType
+        };
         updateWeeksData(options);
       }
+    }
+    const updatePossibleMove = (width, moveType) => {
+      let possibleLeftMove = 0, totalWidth = width;
+      if (currentQuarterData[0].week !== startWeek) {
+        for (let i = 0; i < currentQuarterData.length; i++) {
+          const element = currentQuarterData[i];
+          if (element.week === startWeek) {
+            console.log(i, ' --- ', labelWidth(width), ' === ', moveType, ' +++ ', weeks);
+            possibleLeftMove = (i + labelWidth(currentItemWidth)) * 80;
+          }
+        }
+      }
+      totalWidth = possibleLeftMove >= width ? width : possibleLeftMove;
+      return totalWidth;
     }
     const calculateExactWidth = (width) => {
       return `${(labelWidth(width) || 1) * 5}rem`;
@@ -75,11 +94,13 @@ const EventStatus = (props) => {
       x = event.clientX;
       width = width + dx;
       width = width <= 80 ? 80 : width;
+      // width = updatePossibleMove(width, 'rightmove');
       updateNumberOfWeeks(width, 'rightmove');
       resizableElement.style.width = `${width}px`;
     }
     const onMouseUpRightResize = () => {
       resizableElement.style.width = calculateExactWidth(width);
+      setCurrentItemWidth((labelWidth(width) || 1) * 5);
       document.removeEventListener('mousemove', onMouseMoveRightResize)
     }
     const onMouseDownRightResize = (event) => {
@@ -95,11 +116,13 @@ const EventStatus = (props) => {
       x = event.clientX;
       width = width - dx;
       width = width <= 80 ? 80 : width;
+      // width = updatePossibleMove(width, 'leftmove');
       updateNumberOfWeeks(width, 'leftmove');
       resizableElement.style.width = `${width}px`;
     }
     const onMouseUpLeftResize = () => {
       resizableElement.style.width = calculateExactWidth(width);
+      setCurrentItemWidth((labelWidth(width) || 1) * 5);
       document.removeEventListener('mousemove', onMouseMoveLeftResize)
     }
     const onMouseDownLeftResize = (event) => {
@@ -121,7 +144,7 @@ const EventStatus = (props) => {
       resizerLeft.removeEventListener('mousedown', onMouseDownLeftResize);
     }
   }, [])
-  // console.log('weekStateweekState ', weekState)
+  // console.log('currentItemWidthcurrentItemWidth ---->>>> ', currentItemWidth)
   const classProps = `data-cell-label absolute z-10 ${$row > 1 ? `top-cell-${$row}` : 'top-2'} ${weeks === 1 ? 'sm-line-height' : ''} left-0.2 py-1 ${bgColor} flex flex-row flex-wrap justify-left items-center ${borderColor} text-custom-small cell-width-${weeks}`;
   return (
     <div ref={refCellLabel} className={classProps}>

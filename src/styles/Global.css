@@ -212,11 +212,29 @@ section {
 .custom-height-3 {
   height: 8rem;
 }
+.custom-height-4 {
+  height: 10.4rem;
+}
+.custom-height-5 {
+  height: 13rem;
+}
+.custom-height-6 {
+  height: 15.4rem;
+}
 .top-cell-2 {
   top: 2.9rem;
 }
 .top-cell-3 {
   top: 5.4rem;
+}
+.top-cell-4 {
+  top: 7.9rem;
+}
+.top-cell-5 {
+  top: 10.4rem;
+}
+.top-cell-6 {
+  top: 12.9rem;
 }
 .code-icon {
   font-size: 6px;
