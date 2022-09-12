@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { foreCastInfo } from '../../../../apiData/forecastData';
+import React, { useEffect, useRef } from 'react';
 
 const getStatusColor = (status) => {
   let bgColor = '', borderColor = '', textStatusColor = 'default-status';
@@ -35,16 +34,9 @@ const EventStatus = (props) => {
     updateWeeksData, eventIndex, dragAction: { selectStatus, rowIndex, currentPeriod }
   } = props;
   const { bgColor, borderColor, textStatusColor } = getStatusColor(status);
-  const currentQuarterData = foreCastInfo.filter(data => data.quarter === currentPeriod);
-  const [currentItemWidth, setCurrentItemWidth] = useState(80);
   const refCellLabel = useRef(null);
   const refLeft = useRef(null);
   const refRight = useRef(null);
-
-  // useEffect(() => {
-  //   // setweekState(weeks);
-  //   // updateWeeksData();
-  // }, [weeks, updateWeeksData])
 
   useEffect(() => {
     const resizableElement = refCellLabel.current;
@@ -53,8 +45,6 @@ const EventStatus = (props) => {
     // let height = parseInt(styles.height, 10);
     let x = 0;
     // let y = 0;
-    // resizableElement.style.top = '0px';
-    // resizableElement.style.left = '0px';
     const labelWidth = (width) => {
       let calculateWidth = Math.round(width / 16);
       let expandableWidth = (Math.round(calculateWidth / 5) || 1);
@@ -71,20 +61,6 @@ const EventStatus = (props) => {
         updateWeeksData(options);
       }
     }
-    const updatePossibleMove = (width, moveType) => {
-      let possibleLeftMove = 0, totalWidth = width;
-      if (currentQuarterData[0].week !== startWeek) {
-        for (let i = 0; i < currentQuarterData.length; i++) {
-          const element = currentQuarterData[i];
-          if (element.week === startWeek) {
-            console.log(i, ' --- ', labelWidth(width), ' === ', moveType, ' +++ ', weeks);
-            possibleLeftMove = (i + labelWidth(currentItemWidth)) * 80;
-          }
-        }
-      }
-      totalWidth = possibleLeftMove >= width ? width : possibleLeftMove;
-      return totalWidth;
-    }
     const calculateExactWidth = (width) => {
       return `${(labelWidth(width) || 1) * 5}rem`;
     }
@@ -94,14 +70,12 @@ const EventStatus = (props) => {
       x = event.clientX;
       width = width + dx;
       width = width <= 80 ? 80 : width;
-      // width = updatePossibleMove(width, 'rightmove');
       updateNumberOfWeeks(width, 'rightmove');
       resizableElement.style.width = `${width}px`;
     }
     const onMouseUpRightResize = () => {
       resizableElement.style.width = calculateExactWidth(width);
-      setCurrentItemWidth((labelWidth(width) || 1) * 5);
-      document.removeEventListener('mousemove', onMouseMoveRightResize)
+      document.removeEventListener('mousemove', onMouseMoveRightResize);
     }
     const onMouseDownRightResize = (event) => {
       x = event.clientX;
@@ -112,18 +86,23 @@ const EventStatus = (props) => {
     }
     //Left move
     const onMouseMoveLeftResize = (event) => {
-      const dx = event.clientX - x;
-      x = event.clientX;
-      width = width - dx;
-      width = width <= 80 ? 80 : width;
-      // width = updatePossibleMove(width, 'leftmove');
-      updateNumberOfWeeks(width, 'leftmove');
-      resizableElement.style.width = `${width}px`;
+      const firstCellEle = document.getElementsByClassName('first-cell')[0];
+      const tableId = document.getElementById('scrollable-table');
+      const firstCellStyle = window.getComputedStyle(firstCellEle, null);
+      let minMoveWidth = firstCellStyle.getPropertyValue('width');
+      minMoveWidth = parseInt(minMoveWidth, 10);
+      if (event.clientX > (minMoveWidth + 40) - Math.floor(tableId.scrollLeft)) {
+        const dx = event.clientX - x;
+        x = event.clientX;
+        width = width - dx;
+        width = width <= 80 ? 80 : width;
+        updateNumberOfWeeks(width, 'leftmove');
+        resizableElement.style.width = `${width}px`;
+      }
     }
     const onMouseUpLeftResize = () => {
       resizableElement.style.width = calculateExactWidth(width);
-      setCurrentItemWidth((labelWidth(width) || 1) * 5);
-      document.removeEventListener('mousemove', onMouseMoveLeftResize)
+      document.removeEventListener('mousemove', onMouseMoveLeftResize);
     }
     const onMouseDownLeftResize = (event) => {
       x = event.clientX;
@@ -143,9 +122,9 @@ const EventStatus = (props) => {
       resizerRight.removeEventListener('mousedown', onMouseDownRightResize);
       resizerLeft.removeEventListener('mousedown', onMouseDownLeftResize);
     }
-  }, [])
-  // console.log('currentItemWidthcurrentItemWidth ---->>>> ', currentItemWidth)
-  const classProps = `data-cell-label absolute z-10 ${$row > 1 ? `top-cell-${$row}` : 'top-2'} ${weeks === 1 ? 'sm-line-height' : ''} left-0.2 py-1 ${bgColor} flex flex-row flex-wrap justify-left items-center ${borderColor} text-custom-small cell-width-${weeks}`;
+  }, []);
+
+  const classProps = `data-cell-label-${rowIndex}-${eventIndex} absolute z-10 ${$row > 1 ? `top-cell-${$row}` : 'top-2'} ${weeks === 1 ? 'sm-line-height' : ''} left-0.2 py-1 ${bgColor} flex flex-row flex-wrap justify-left items-center ${borderColor} text-custom-small cell-width-${weeks}`;
   return (
     <div ref={refCellLabel} className={classProps}>
       <div ref={refLeft} className='resizer resizer-l'></div>

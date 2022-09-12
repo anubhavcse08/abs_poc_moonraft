@@ -101,10 +101,9 @@ const Table = (props) => {
     }
 
     const renderTableData = () => {
-        // console.log(selectStatus, ' IIIIIIIIIIIIIIIIII>>>>>>>>>>>>>> ', selectStatus);
         return selectedStatusData(selectStatus) && selectedStatusData(selectStatus).map((item, index) => {
             return <tr key={index} className="border-dotted border-b-2 border-y-slate-300">
-                <td className='py-2 border border-x-slate-300 bg-white font-semibold w-60 px-2'>
+                <td className='first-cell py-2 border border-x-slate-300 bg-white font-semibold w-60 px-2'>
                     <div className='flex flex-row items-center'>
                         <input type="checkbox" className="checked:bg-blue-500 cursor-pointer" />
                         <p className='whitespace-nowrap text-ellipsis overflow-hidden text-gray-900 text-xs ml-1'>{item.Title}</p>
@@ -124,7 +123,7 @@ const Table = (props) => {
     return (
         <React.Fragment>
             <div className="container mx-auto px-4">
-                <div className="-mx-4 py-3 overflow-x-auto hide-scrollbars">
+                <div id="scrollable-table" className="-mx-4 py-3 overflow-x-auto hide-scrollbars">
                     <div className="inline-block min-w-full shadow-md overflow-hidden">
                         <table className="min-w-full leading-normal border-collapse border border-slate-400">
                             <thead>{renderTableHeader()}</thead>
